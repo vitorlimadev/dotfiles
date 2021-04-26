@@ -18,10 +18,9 @@ set nowrap
 set tabstop=2
 set autoindent
 set signcolumn=yes
-set colorcolumn=100
 set nohlsearch
-highlight ColorColumn ctermbg=grey
-
+" Autoformat elixir files
+autocmd FileType elixir setlocal formatprg=mix\ format\ -
 
 
 
@@ -38,6 +37,9 @@ map <silent> <Leader>kb :bdelete<CR>
 " Buffers list
 map <silent> <Leader>b :Buffers<CR>
 
+" Project wide search
+nmap <Leader>ps :Rg<SPACE>
+
 " Git repo file navigation
 map <silent> <Leader>gf :GFiles<CR>
 
@@ -49,16 +51,16 @@ nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
 
 " Goto definition
- nmap <silent> gtd <Plug>(coc-definition)
+nmap <silent> gtd <Plug>(coc-definition)
 
 " Goto implementation
- nmap <silent> gti <Plug>(coc-implementation)
+nmap <silent> gti <Plug>(coc-implementation)
 
 " Goto references
- nmap <silent> gtr <Plug>(coc-references)
+nmap <silent> gtr <Plug>(coc-references)
 
 " Use <c-space> to trigger completion.
- inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " TAB to trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -96,6 +98,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
+" Project search
+Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 
