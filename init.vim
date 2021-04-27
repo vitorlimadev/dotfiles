@@ -1,7 +1,6 @@
 " ---------- Personal preferences ----------
 
 syntax enable
-set guicursor=
 set number
 set relativenumber
 set scrolloff=8         
@@ -25,11 +24,19 @@ autocmd FileType elixir setlocal formatprg=mix\ format\ -
 
 
 
+
+" ---------- Netrw ----------
+
+" Uses filetree style
+let g:netrw_liststyle = 3
+" Hides top bar
+let g:netrw_banner = 0
+
 " ---------- Remaps ----------
 
 " Mapping leader key to space
-" nnoremap <SPACE> <Nop>
-" let mapleader=" "
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " Kill current buffer
 map <silent> <Leader>kb :bdelete<CR>
@@ -39,6 +46,9 @@ map <silent> <Leader>b :Buffers<CR>
 
 " Project wide search
 nmap <Leader>ps :Rg<SPACE>
+
+" Open file explorer
+nmap <Leader>fe :Explore<CR>
 
 " Git repo file navigation
 map <silent> <Leader>gf :GFiles<CR>
