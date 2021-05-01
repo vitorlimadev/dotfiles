@@ -7,6 +7,7 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 set noswapfile
+set notimeout
 set nobackup
 set nowritebackup
 set smarttab
@@ -28,15 +29,16 @@ autocmd FileType elixir setlocal formatprg=mix\ format\ -
 " ---------- Netrw ----------
 
 " Uses filetree style
-let g:netrw_liststyle = 3
+" let g:netrw_liststyle = 3
 " Hides top bar
 let g:netrw_banner = 0
 
 " ---------- Remaps ----------
 
-" Mapping leader key to space
-nnoremap <SPACE> <Nop>
+
+" Remaping leader to space
 let mapleader=" "
+nnoremap <SPACE> <Nop>
 
 " Kill current buffer
 map <silent> <Leader>kb :bdelete<CR>
@@ -90,6 +92,12 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+" Navigate in documentation panel
+nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
+inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 
 

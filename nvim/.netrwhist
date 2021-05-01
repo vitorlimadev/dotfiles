@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/vitor/stone/banking-panda/apps'
+let g:netrw_dirhist_0='/home/vitor/stone/banking-panda'
+let g:netrw_dirhist_9='/home/vitor/stone/playground'
+let g:netrw_dirhist_8='/home/vitor/stone/playground/apps'
+let g:netrw_dirhist_7='/home/vitor/stone/playground/apps/playground'
+let g:netrw_dirhist_6='/home/vitor/stone/playground/apps/playground/test'
+let g:netrw_dirhist_5='/home/vitor/stone/playground/apps/playground'
+let g:netrw_dirhist_4='/home/vitor/stone/playground/apps'
+let g:netrw_dirhist_3='/home/vitor/stone/playground'
+let g:netrw_dirhist_2='/home/vitor/stone/playground/apps'
