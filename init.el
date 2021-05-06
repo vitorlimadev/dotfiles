@@ -30,6 +30,10 @@
 ; Set folder for backup files. Without it, emacs clutters your folders with files ending with ~
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
+
+
+
+
 ;; ---------- MELPA ----------
 
 ; Adding MELPA to package sources
@@ -56,6 +60,10 @@
 
 ; Always ensure packages
 (setq use-package-always-ensure t)
+
+
+
+
 
 ;; ---------- EXTERNAL PACKAGES ----------
 

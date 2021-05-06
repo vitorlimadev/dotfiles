@@ -28,12 +28,15 @@ autocmd FileType elixir setlocal formatprg=mix\ format\ -
 
 " ---------- Netrw ----------
 
-" Uses filetree style
-" let g:netrw_liststyle = 3
 " Hides top bar
 let g:netrw_banner = 0
+" Sets filetree mode
+let g:netrw_liststyle = 3
 
 " ---------- Remaps ----------
+
+
+
 
 
 " Remaping leader to space
@@ -50,10 +53,11 @@ map <silent> <Leader>b :Buffers<CR>
 nmap <Leader>ps :Rg<SPACE>
 
 " Open file explorer
-nmap <Leader>fe :Explore<CR>
+nmap <silent> <Leader>fe :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree | wincmd p
 
-" Git repo file navigation
-map <silent> <Leader>gf :GFiles<CR>
+" File search (only works in Git repo)
+map <silent> <Leader>fs :GFiles<CR>
 
 " Git status
 map <silent> <Leader>gs :GFiles?<CR>
@@ -109,15 +113,19 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Project manager
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" File tree
+Plug 'preservim/nerdtree'
+" Project search
+Plug 'jremmen/vim-ripgrep'
 " Theme
 Plug 'arcticicestudio/nord-vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
-" Project search
-Plug 'jremmen/vim-ripgrep'
+" Git integration
+Plug 'jreybert/vimagit'
 
 call plug#end()
 
