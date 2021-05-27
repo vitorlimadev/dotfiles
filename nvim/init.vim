@@ -3,7 +3,7 @@
 syntax enable
 set number
 set relativenumber
-set scrolloff=8         
+set scrolloff=15         
 set sidescrolloff=15
 set sidescroll=1
 set noswapfile
@@ -30,8 +30,6 @@ autocmd FileType elixir setlocal formatprg=mix\ format\ -
 
 " Hides top bar
 let g:netrw_banner = 0
-" Sets filetree mode
-let g:netrw_liststyle = 3
 
 " ---------- Remaps ----------
 
@@ -53,8 +51,8 @@ map <silent> <Leader>b :Buffers<CR>
 nmap <Leader>ps :Rg<SPACE>
 
 " Open file explorer
-nmap <silent> <Leader>fe :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree | wincmd p
+nmap <silent> <Leader>fe :NERDTree<CR>
+let NERDTreeQuitOnOpen = 1
 
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
@@ -103,7 +101,9 @@ nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<
 inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
-
+" Resizing vertical windows
+nmap <silent> <Leader>+ :vertical resize +5<CR>
+nmap <silent> <Leader>- :vertical resize -5<CR>
 
 
 
@@ -116,16 +116,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" File tree
-Plug 'preservim/nerdtree'
 " Project search
 Plug 'jremmen/vim-ripgrep'
 " Theme
 Plug 'arcticicestudio/nord-vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-endwise'
 " Git integration
-Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
+" Better modeline
+Plug 'vim-airline/vim-airline'
+" File tree
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
