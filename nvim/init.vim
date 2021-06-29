@@ -63,21 +63,6 @@ nmap <Leader>ps :Rg<SPACE>
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
 
-" Git files
-map <silent> <Leader>gf :GFiles?<CR>
-
-" Git status
-map <silent> <Leader>gs :Git<CR>
-
-" Git commit
-map <silent> <Leader>gc :Git commit<CR>
-
-" Git log
-map <silent> <Leader>gl :Git log<CR>
-
-" Git merge
-map <silent> <Leader>gm :Git mergetool<CR>
-
 " Code navigation and diagnostics keybindings.
 nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
@@ -129,6 +114,26 @@ nmap <silent> <Up> :resize -2<CR>
 nmap <silent> <Down> :resize +2<CR>
 nmap <silent> <Left> :vertical resize -2<CR>
 nmap <silent> <Right> :vertical resize +2<CR>
+
+" ----- GIT -----
+
+" Git files
+map <silent> <Leader>gf :GFiles?<CR>
+
+" Git status
+map <silent> <Leader>gs :Git<CR>
+
+" Select left change/diff (inside :Gvdiffsplit)
+map <silent> <Leader>gdl :diffget //2
+
+" Select right change/diff (inside :Gvdiffsplit)
+map <silent> <Leader>gdr :diffget //3
+
+" Git commit
+map <silent> <Leader>gc :Git commit<CR>
+
+" Git log
+map <silent> <Leader>gl :Git log<CR>
 
 
 

@@ -13,6 +13,10 @@
 	/home/vitor/7itec/ct-web
 	package.json
 1624906791
+'4
+	/home/vitor/elixir/blog
+	mix.exs
+1624940952
 'b
 	/home/vitor/bin/
 	..
@@ -42,225 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/7itec/ct-api-server
-	package.json
-32
-d/home/vitor/7itec/ct-web
-	package.json
-20
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.oh-my-zsh
-20
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.oh-my-zsh
-20
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	..
-0
-d/home/vitor/.dotfiles
-	..
-0
-d/home/vitor
-	.config
-6
-d/home/vitor/.config
-	nvim-qt
-30
-d/home/vitor/.config/nvim-qt
-	..
-0
-d/home/vitor/.config
-	nvim
-29
-d/home/vitor/.config/nvim
-	init.vim
-3
-d/home/vitor/.config
-	nvim
-29
-d/home/vitor
-	.local
-16
-d/home/vitor/.local
-	share
-3
-d/home/vitor/.local/share
-	nvim
-23
-d/home/vitor/.local/share/nvim
-	site
-3
-d/home/vitor/.local/share/nvim/site
-	pack
-2
-d/home/vitor/.local/share/nvim/site/pack
-	packer
-1
-d/home/vitor/.local/share/nvim/site/pack/packer
-	start
-2
-d/home/vitor/.local/share/nvim/site/pack/packer/start
-	packer.nvim
-1
-d/home/vitor/.local/share/nvim/site/pack/packer
-	opt
-1
-d/home/vitor/.local/share/nvim/site/pack/packer/opt
-	playground
-31
-d/home/vitor/.local/share/nvim/site/pack/packer
-	..
-0
-d/home/vitor/.local/share/nvim/site/pack
-	..
-0
-d/home/vitor/.local/share/nvim/site
-	autoload
-1
-d/home/vitor/.local/share/nvim
-	site
-3
-d/home/vitor/.local/share
-	nvim
-23
-d/home/vitor/.local
-	share
-3
-d/home/vitor
-	.pki
-23
-d/home/vitor/stone/banking-panda
-	mix.lock
-29
-d/home/vitor/stone
-	banking-panda
-1
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	coc-settings.json
-1
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-2
-d/home/vitor/stone/banking-panda
-	.git
-3
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-2
-d/home/vitor
-	.vim
-13
-d/home/vitor/.vim
-	autoload
-1
-d/home/vitor/.vim/autoload
-	plug.vim
-1
-d/home/vitor/.vim
-	autoload
-1
-d/home/vitor
-	.vimrc
-42
-d/home/vitor/.config/vifm
-	vifmrc
-5
-d/home/vitor/.config
-	vifm
-34
-d/home/vitor
-	.vimrc
-40
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/.config/vifm
-	vifmrc
-5
-d/home/vitor/.config
-	vifm
-34
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/.config/vifm
-	vifmrc
-5
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/.config/vifm
-	vifmrc
-5
-d/home/vitor
-	.vimrc
-43
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	elixir
-30
-d/home/vitor/elixir
-	blog
-1
-d/home/vitor
-	elixir
-30
-d/home/vitor/stone/banking-panda
-	.gitmodules
-17
 d/home/vitor/.dotfiles
 	nvim
 2
@@ -339,9 +124,228 @@ d/home/vitor/.dotfiles/nvim
 d/home/vitor
 	Videos
 39
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/7itec/ct-api-server
+	package.json
+32
+d/home/vitor/stone/banking-panda
+	CHANGELOG.md
+19
+d/home/vitor/.dotfiles
+	nvim
+2
 d/home/vitor/.dotfiles/nvim
 	init.vim
 3
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor
+	.dotfiles
+8
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor
+	elixir
+42
+d/home/vitor/elixir
+	blog
+1
+d/home/vitor/elixir/blog
+	mix.exs
+10
+d/home/vitor/elixir
+	elixir-ls
+1
+d/home/vitor
+	elixir
+42
+d/home/vitor/elixir/blog
+	lib
+4
+d/home/vitor/elixir/blog/lib
+	..
+0
+d/home/vitor/elixir/blog
+	mix.exs
+11
+d/home/vitor
+	elixir
+42
+d/home/vitor/elixir
+	elixir-ls
+1
+d/home/vitor/blog
+	..
+0
+d/home/vitor
+	blog
+41
+d/home
+	vitor
+1
+d/home/vitor
+	blog
+41
+d/home/vitor/blog
+	mix.exs
+10
+d/home/vitor
+	elixir
+42
+d/home/vitor/elixir
+	..
+0
+d/home/vitor
+	elixir
+42
+d/home/vitor/elixir
+	..
+0
+d/home/vitor
+	elixir
+41
+d/home/vitor/elixir
+	blog
+1
+d/home/vitor/elixir/blog
+	mix.exs
+10
+d/home/vitor/elixir
+	blog
+1
+d/home/vitor/elixir/blog
+	mix.exs
+10
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/elixir/blog
+	mix.exs
+11
+d/home/vitor/.local/share/vifm/Trash/002_blog
+	mix.exs
+11
+d/home/vitor/elixir/blog
+	test
+7
+d/home/vitor/.local/share/vifm/Trash/002_blog
+	deps
+4
+d/home/vitor/.local/share/vifm/Trash/002_blog/deps
+	..
+0
+d/home/vitor/.local/share/vifm/Trash/002_blog
+	lib
+5
+d/home/vitor/.local/share/vifm/Trash/002_blog/lib
+	..
+0
+d/home/vitor/.local/share/vifm/Trash/002_blog
+	lib
+5
+d/home/vitor/.local/share/vifm/Trash
+	002_blog
+10
+d/home/vitor/.local/share/vifm/Trash/002_blog
+	lib
+5
+d/home/vitor/.local/share/vifm/Trash
+	002_blog
+10
+d/home/vitor/.local/share/vifm
+	Trash
+1
+d/home/vitor/elixir/blog
+	priv
+6
+d/home/vitor/elixir/blog/priv
+	repo
+1
+d/home/vitor/elixir/blog/priv/repo
+	migrations
+1
+d/home/vitor/elixir/blog/priv/repo/migrations
+	..
+0
+d/home/vitor/elixir/blog/priv/repo
+	migrations
+1
+d/home/vitor/elixir/blog/priv
+	repo
+1
+d/home/vitor/elixir/blog
+	lib
+5
+d/home/vitor/elixir/blog/lib
+	..
+0
+d/home/vitor/elixir/blog
+	priv
+6
+d/home/vitor/elixir/blog/priv
+	repo
+1
+d/home/vitor/elixir/blog/priv/repo
+	migrations
+1
+d/home/vitor/elixir/blog/priv/repo/migrations
+	20210629050031_create_users_table.exs
+2
+d/home/vitor/elixir/blog
+	priv
+6
+d/home/vitor/elixir/blog/priv
+	repo
+1
+d/home/vitor/elixir/blog/priv/repo
+	migrations
+1
+d/home/vitor/elixir/blog/priv/repo/migrations
+	20210629050031_create_users_table.exs
+2
+d/home/vitor/elixir/pebble
+	apps
+4
+d/home/vitor/elixir/pebble/apps
+	pebble
+1
+d/home/vitor/elixir/pebble/apps/pebble
+	priv
+3
+d/home/vitor/elixir/pebble/apps/pebble/priv
+	repo
+1
+d/home/vitor/elixir/pebble/apps/pebble/priv/repo
+	migrations
+1
+d/home/vitor/elixir/pebble/apps/pebble/priv/repo/migrations
+	20210414173300_create_accounts.exs
+2
+d/home/vitor/elixir/blog
+	lib
+5
+d/home/vitor/elixir/blog/lib
+	blog
+1
+d/home/vitor/elixir/blog/lib/blog
+	users
+1
+d/home/vitor/elixir/blog/lib/blog/users
+	users.ex
+2
+d/home/vitor/elixir/blog
+	lib
+5
 d
 
 # Right window history (oldest to newest):
@@ -354,6 +358,10 @@ D/home/vitor
 D
 
 # Command line history (oldest to newest):
+:mkdir users
+:touch users.ex
+:mkdir schemas
+:touch user.ex
 :colorscheme gurvbox
 :colorscheme gruvbox
 :colorscheme palenight
@@ -361,6 +369,8 @@ D
 :touch .vimrc
 :bmarks
 :marks
+:help
+:touch docker-compose
 :q
 
 # Search history (oldest to newest):
@@ -371,7 +381,7 @@ prandom.dat
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/vitor/.local/share/vifm/Trash/000_test
+""/home/vitor/.local/share/vifm/Trash/002_blog
 
 # Directory stack (oldest to newest):
 
@@ -412,8 +422,16 @@ t/home/vitor/.local/share/vifm/Trash/000_#init.el#
 	/home/vitor/.dotfiles/#init.el#
 t/home/vitor/.local/share/vifm/Trash/000_.git
 	/home/vitor/.dotfiles/vifm/colors/.git
+t/home/vitor/.local/share/vifm/Trash/000_:q
+	/home/vitor/stone/banking-panda/:q
 t/home/vitor/.local/share/vifm/Trash/000_test
 	/home/vitor/.dotfiles/nvim/test
+t/home/vitor/.local/share/vifm/Trash/000_blog
+	/home/vitor/elixir/blog
+t/home/vitor/.local/share/vifm/Trash/002_blog
+	/home/vitor/blog
+t/home/vitor/.local/share/vifm/Trash/000_docker-compose
+	/home/vitor/elixir/blog/docker-compose
 
 # State:
 f
