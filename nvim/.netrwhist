@@ -1,12 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
-let g:netrw_dirhist_2='/home/vitor/elixir/isolith'
-let g:netrw_dirhist_1='/home/vitor/stone/banking-panda/apps/panda_notifications/lib/notifications/strategies'
-let g:netrw_dirhist_0='/home/vitor/stone/banking-panda/apps/panda_notifications/lib/notifications'
-let g:netrw_dirhist_9='/home/vitor/stone/banking-panda/apps/panda_notifications/lib'
-let g:netrw_dirhist_8='/home/vitor/stone/banking-panda/apps/panda_notifications'
-let g:netrw_dirhist_7='/home/vitor/stone/banking-panda/apps'
-let g:netrw_dirhist_6='/home/vitor/stone/banking-panda/apps/panda_core'
-let g:netrw_dirhist_5='/home/vitor/stone/banking-panda/apps/panda_core/lib'
-let g:netrw_dirhist_4='/home/vitor/stone/banking-panda/apps/panda_core/lib/core'
-let g:netrw_dirhist_3='/home/vitor/stone/banking-panda/apps/panda_core/lib/core/users'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/vitor/.dotfiles/nvim'

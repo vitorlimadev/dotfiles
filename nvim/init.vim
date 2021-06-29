@@ -1,8 +1,7 @@
-" ---------- Personal preferences ----------
+"------- Personal preferences ----------
 
 syntax enable
 set number
-set relativenumber
 set scrolloff=15         
 set sidescrolloff=15
 set sidescroll=1
@@ -19,59 +18,69 @@ set tabstop=2
 set autoindent
 set signcolumn=yes
 set nohlsearch
-" Autoformat elixir files
-autocmd FileType elixir setlocal formatprg=mix\ format\ -
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
 
 
 
 
 
-" ---------- Netrw ----------
 
-" Hides top bar
-let g:netrw_banner = 0
+
+
+
 
 " ---------- Remaps ----------
-
-
-
-
 
 " Remaping leader to space
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-" Kill current buffer
-map <silent> <Leader>kb :bdelete<CR>
+" Copying/pasting with system's native copy/paste
+vnoremap <C-y> "+y
+map <C-p> "+p
+
+" Open file explorer
+nmap <silent> <Leader>fe :EditVifm<CR>
 
 " Buffers list
 map <silent> <Leader>b :Buffers<CR>
 
+" Kill current buffer
+map <silent> <Leader>kb :bdelete<CR>
+
 " Project wide search
 nmap <Leader>ps :Rg<SPACE>
-
-" Open file explorer
-nmap <silent> <Leader>fe :NERDTree<CR>
-let NERDTreeQuitOnOpen = 1
 
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
 
+" Git files
+map <silent> <Leader>gf :GFiles?<CR>
+
 " Git status
-map <silent> <Leader>gs :GFiles?<CR>
+map <silent> <Leader>gs :Git<CR>
+
+" Git commit
+map <silent> <Leader>gc :Git commit<CR>
+
+" Git merge
+map <silent> <Leader>gm :Git mergetool<CR>
 
 " Code navigation and diagnostics keybindings.
 nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
 
 " Goto definition
-nmap <silent> gtd <Plug>(coc-definition)
+nmap <silent> <Leader>gd <Plug>(coc-definition)
 
 " Goto implementation
-nmap <silent> gti <Plug>(coc-implementation)
+nmap <silent> <Leader>gi <Plug>(coc-implementation)
 
 " Goto references
-nmap <silent> gtr <Plug>(coc-references)
+nmap <silent> <Leader>gr <Plug>(coc-references)
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -81,6 +90,11 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Show documentation
 nnoremap <silent> H :call <SID>show_documentation()<CR>
@@ -102,14 +116,23 @@ inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(
 inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " Resizing vertical windows
-nmap <silent> <Leader>+ :vertical resize +5<CR>
-nmap <silent> <Leader>- :vertical resize -5<CR>
+nmap <silent> <Up> :resize -2<CR>
+nmap <silent> <Down> :resize +2<CR>
+nmap <silent> <Left> :vertical resize -2<CR>
+nmap <silent> <Right> :vertical resize +2<CR>
+
+
+
+
+
+
+
 
 
 
 " ---------- Plugins ----------
 
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -118,17 +141,15 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Project search
 Plug 'jremmen/vim-ripgrep'
-" Theme
-Plug 'arcticicestudio/nord-vim'
+" Themes
+Plug 'drewtempelmeyer/palenight.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" Better modeline
-Plug 'vim-airline/vim-airline'
 " File tree
-Plug 'preservim/nerdtree'
+Plug 'vifm/vifm.vim'
 
 call plug#end()
 
@@ -136,8 +157,22 @@ call plug#end()
 
 
 
+
+
+
+
+
 " ---------- Theme ---------- 
-colorscheme nord
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
+
+" Always transparent background
+hi Normal guibg=NONE ctermbg=NONE
+
+
+
+
+
 
 
 
@@ -148,33 +183,5 @@ let g:coc_global_extensions = [
 	\ 'coc-elixir',
 	\ ]
 
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
+" Autoformat elixir files
+autocmd FileType elixir setlocal formatprg=mix\ format\ -

@@ -9,7 +9,7 @@
 ; Disable tooltips
 (tooltip-mode -1)
 ; Fringe mode
-; (set-fringe-mode 10)
+(set-fringe-mode 10)
 ; Disable menubar
 (menu-bar-mode -1)
 ; Enable line numbers
