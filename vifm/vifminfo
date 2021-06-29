@@ -42,63 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/vitor/stone
-	banking-panda
-1
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/7itec
-	ct-api-server
-1
-d/home/vitor/7itec/ct-api-server
-	package.json
-32
-d/home/vitor/7itec
-	ct-web
-2
-d/home/vitor/7itec/ct-web
-	package.json
-20
-d/home/vitor/7itec
-	ct-web
-2
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/.config/vifm
-	vifm-help.txt
-3
-d/home/vitor
-	.oh-my-zsh
-20
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.oh-my-zsh
-20
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.oh-my-zsh
-20
 d/home/vitor/stone/banking-panda
 	mix.exs
 28
@@ -339,8 +282,65 @@ d/home/vitor
 d/home/vitor/stone/banking-panda
 	mix.exs
 28
+d/home/vitor
+	.dotfiles
+8
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/.dotfiles
+	vifm
+3
 d/home/vitor/.dotfiles/vifm
-	vifm-help.txt
+	colors
+1
+d/home/vitor/.dotfiles/vifm/colors
+	..
+0
+d/home/vitor/.dotfiles/vifm
+	scripts
+2
+d/home/vitor/.dotfiles/vifm/scripts
+	..
+0
+d/home/vitor/.dotfiles/vifm
+	colors
+1
+d/home/vitor/.dotfiles/vifm/colors
+	COPYING
+1
+d/home/vitor/.dotfiles/vifm
+	colors
+1
+d/home/vitor/.dotfiles
+	vifm
+3
+d/home/vitor
+	.dotfiles
+8
+d/home/vitor/.dotfiles
+	init.el
+5
+d/home/vitor
+	.dotfiles
+8
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor
+	Videos
+39
+d/home/vitor/.dotfiles/nvim
+	init.vim
 3
 d
 
@@ -371,7 +371,7 @@ prandom.dat
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/vitor/.local/share/vifm/Trash/000_#init.el#
+""/home/vitor/.local/share/vifm/Trash/000_test
 
 # Directory stack (oldest to newest):
 
@@ -410,6 +410,10 @@ t/home/vitor/.local/share/vifm/Trash/000_.NERDTreeBookmarks
 	/home/vitor/.NERDTreeBookmarks
 t/home/vitor/.local/share/vifm/Trash/000_#init.el#
 	/home/vitor/.dotfiles/#init.el#
+t/home/vitor/.local/share/vifm/Trash/000_.git
+	/home/vitor/.dotfiles/vifm/colors/.git
+t/home/vitor/.local/share/vifm/Trash/000_test
+	/home/vitor/.dotfiles/nvim/test
 
 # State:
 f

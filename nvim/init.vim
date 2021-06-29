@@ -72,6 +72,9 @@ map <silent> <Leader>gs :Git<CR>
 " Git commit
 map <silent> <Leader>gc :Git commit<CR>
 
+" Git log
+map <silent> <Leader>gl :Git log<CR>
+
 " Git merge
 map <silent> <Leader>gm :Git mergetool<CR>
 
