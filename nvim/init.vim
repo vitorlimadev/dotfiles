@@ -51,6 +51,12 @@ map <silent> <Leader>b :Buffers<CR>
 " Kill current buffer
 map <silent> <Leader>kb :bdelete<CR>
 
+" Open terminal
+nmap <silent> <Leader>t :sp term://zsh<CR>
+
+" Remaping the weird shortcut to exit terminal mode
+tnoremap <C-\> <C-\><C-n>
+
 " Project wide search
 nmap <Leader>ps :Rg<SPACE>
 
@@ -74,13 +80,13 @@ nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
 
 " Goto definition
-nmap <silent> <Leader>gd <Plug>(coc-definition)
+nmap <silent> <Leader>gtd <Plug>(coc-definition)
 
 " Goto implementation
-nmap <silent> <Leader>gi <Plug>(coc-implementation)
+nmap <silent> <Leader>gti <Plug>(coc-implementation)
 
 " Goto references
-nmap <silent> <Leader>gr <Plug>(coc-references)
+nmap <silent> <Leader>gtr <Plug>(coc-references)
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -163,6 +169,7 @@ call plug#end()
 
 
 " ---------- Theme ---------- 
+
 colorscheme palenight
 let g:lightline = { 'colorscheme': 'palenight' }
 
@@ -179,6 +186,7 @@ hi Normal guibg=NONE ctermbg=NONE
 
 
 " ---------- Coc config ----------
+
 let g:coc_global_extensions = [
 	\ 'coc-elixir',
 	\ ]
