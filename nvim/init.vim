@@ -135,6 +135,9 @@ map <silent> <Leader>gc :Git commit<CR>
 " Git log
 map <silent> <Leader>gl :Git log<CR>
 
+" Git push
+map <silent> <Leader>gp :Git push<CR>
+
 
 
 
