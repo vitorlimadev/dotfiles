@@ -65,52 +65,6 @@ nmap <Leader>ps :Rg<SPACE>
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
 
-" Code navigation and diagnostics keybindings.
-nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
-
-" Goto definition
-nmap <silent> <Leader>gtd <Plug>(coc-definition)
-
-" Goto implementation
-nmap <silent> <Leader>gti <Plug>(coc-implementation)
-
-" Goto references
-nmap <silent> <Leader>gtr <Plug>(coc-references)
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" TAB to trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Show documentation
-nnoremap <silent> H :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Navigate in documentation panel
-nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
-nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
-inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
 " Resizing vertical windows
 nmap <silent> <Up> :resize -2<CR>
 nmap <silent> <Down> :resize +2<CR>
@@ -154,7 +108,8 @@ map <silent> <Leader>gp :Git push<CR>
 call plug#begin('~/.vim/plugged')
 
 " Autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -186,25 +141,6 @@ call plug#end()
 " ---------- Theme ---------- 
 
 colorscheme palenight
-let g:lightline = { 'colorscheme': 'palenight' }
 
 " Always transparent background
 hi Normal guibg=NONE ctermbg=NONE
-
-
-
-
-
-
-
-
-
-
-" ---------- Coc config ----------
-
-let g:coc_global_extensions = [
-	\ 'coc-elixir',
-	\ ]
-
-" Autoformat elixir files
-autocmd FileType elixir setlocal formatprg=mix\ format\ -

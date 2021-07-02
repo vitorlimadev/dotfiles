@@ -46,186 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/vitor/elixir/blog
-	lib
-5
-d/home/vitor/elixir/blog/lib
-	..
-0
-d/home/vitor/elixir/blog
-	priv
-6
-d/home/vitor/elixir/blog/priv
-	repo
-1
-d/home/vitor/elixir/blog/priv/repo
-	migrations
-1
-d/home/vitor/elixir/blog/priv/repo/migrations
-	20210629050031_create_users_table.exs
-2
-d/home/vitor/elixir/blog
-	priv
-6
-d/home/vitor/elixir/blog/priv
-	repo
-1
-d/home/vitor/elixir/blog/priv/repo
-	migrations
-1
-d/home/vitor/elixir/blog/priv/repo/migrations
-	20210629050031_create_users_table.exs
-2
-d/home/vitor/elixir/pebble
-	apps
-4
-d/home/vitor/elixir/pebble/apps
-	pebble
-1
-d/home/vitor/elixir/pebble/apps/pebble
-	priv
-3
-d/home/vitor/elixir/pebble/apps/pebble/priv
-	repo
-1
-d/home/vitor/elixir/pebble/apps/pebble/priv/repo
-	migrations
-1
-d/home/vitor/elixir/pebble/apps/pebble/priv/repo/migrations
-	20210414173300_create_accounts.exs
-2
-d/home/vitor/elixir/blog
-	lib
-5
-d/home/vitor/elixir/blog/lib
-	blog
-1
-d/home/vitor/elixir/blog/lib/blog
-	users
-1
-d/home/vitor/elixir/blog/lib/blog/users
-	users.ex
-2
-d/home/vitor/elixir/blog
-	lib
-5
-d/home/vitor
-	elixir
-32
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor/stone/banking-panda
-	rel
-12
-d/home/vitor
-	elixir
-32
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor/7itec/ct-api-server
-	package.json
-32
-d/home/vitor
-	elixir
-32
-d/home/vitor/7itec/ct-api-server
-	docker-compose.yml
-24
-d/home/vitor/elixir/blog/lib/blog/users/schemas
-	..
-0
-d/home/vitor/elixir/blog/lib/blog/users
-	schema.ex
-2
-d/home/vitor
-	elixir
-32
-d/home/vitor/stone/banking-panda
-	apps
-5
-d/home/vitor/stone/banking-panda/apps
-	..
-0
-d/home/vitor/stone/banking-panda
-	apps
-5
-d/home/vitor/stone/banking-panda/apps
-	..
-0
-d/home/vitor/stone/banking-panda
-	apps
-5
-d/home/vitor/stone/banking-panda/apps
-	panda_core
-1
-d/home/vitor/stone/banking-panda/apps/panda_core
-	mix.exs
-7
-d/home/vitor/stone/banking-panda/apps
-	panda_keycloak
-4
-d/home/vitor/stone/banking-panda/apps/panda_keycloak
-	lib
-1
-d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib
-	panda_keycloak
-1
-d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib/panda_keycloak
-	ecto
-5
-d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib
-	panda_keycloak
-1
-d/home/vitor/stone/banking-panda/apps/panda_keycloak
-	lib
-1
-d/home/vitor/stone/banking-panda/apps
-	panda_external_clients
-2
-d/home/vitor/stone/banking-panda
-	apps
-5
-d/home/vitor/stone/banking-panda/apps
-	panda_www
-7
-d/home/vitor/stone/banking-panda/apps/panda_www
-	lib
-1
-d/home/vitor/stone/banking-panda/apps/panda_www/lib
-	www
-2
-d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
-	..
-0
-d/home/vitor/stone/banking-panda/apps/panda_www/lib
-	www
-2
-d/home/vitor/stone/banking-panda/apps/panda_www
-	lib
-1
-d/home/vitor/stone/banking-panda/apps/panda_www/lib
-	release
-1
-d/home/vitor/stone/banking-panda/apps/panda_www/lib/release
-	..
-0
-d/home/vitor/stone/banking-panda/apps/panda_www/lib
-	www
-2
-d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
-	controllers
-1
-d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
-	api
-2
 d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
 	me
 1
@@ -344,8 +164,188 @@ d/home/vitor/.dotfiles
 	nvim
 2
 d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/.dotfiles/nvim/after
+	plugin
+1
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+1
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+1
+d/home/vitor/.dotfiles/nvim/after
+	plugin
+1
+d/home/vitor/.dotfiles/nvim
 	init.vim
+4
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/.dotfiles/nvim/after
+	plugin
+1
+d/home/vitor/.dotfiles/nvim/after/plugin
+	completion.rc.vim
+1
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	completion.rc.vim
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspsaga.rc.vim
 3
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspsaga.rc.vim
+3
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspsaga.rc.vim
+3
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+2
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/elixir/blog
+	mix.exs
+12
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/.dotfiles/nvim/after
+	plugin
+1
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+2
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	after
+1
+d/home/vitor/.dotfiles/nvim/after
+	plugin
+1
+d/home/vitor/.dotfiles/nvim/after/plugin
+	lspconfig.rc.vim
+2
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/elixir/blog
+	mix.exs
+12
 d
 
 # Right window history (oldest to newest):
@@ -372,6 +372,7 @@ D
 :marks
 :help
 :touch docker-compose
+:touch lspconfig.rc.vim
 :q
 
 # Search history (oldest to newest):
@@ -382,7 +383,7 @@ prandom.dat
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/vitor/.local/share/vifm/Trash/001_test
+""/home/vitor/.local/share/vifm/Trash/000_lspsaga.rc.vim
 
 # Directory stack (oldest to newest):
 
@@ -441,6 +442,8 @@ t/home/vitor/.local/share/vifm/Trash/000_schema.ex
 	/home/vitor/elixir/blog/lib/blog/users/schema.ex
 t/home/vitor/.local/share/vifm/Trash/000_init.el
 	/home/vitor/.dotfiles/init.el
+t/home/vitor/.local/share/vifm/Trash/000_lspsaga.rc.vim
+	/home/vitor/.dotfiles/nvim/after/plugin/lspsaga.rc.vim
 
 # State:
 f
