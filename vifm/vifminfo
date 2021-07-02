@@ -46,243 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-2
-d/home/vitor/.config/vifm
-	vifmrc
-5
-d/home/vitor
-	stone
-31
-d/home
-	vitor
-1
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor/.dotfiles
-	vifm
-3
-d/home/vitor/.dotfiles/vifm
-	colors
-1
-d/home/vitor/.dotfiles/vifm/colors
-	..
-0
-d/home/vitor/.dotfiles/vifm
-	scripts
-2
-d/home/vitor/.dotfiles/vifm/scripts
-	..
-0
-d/home/vitor/.dotfiles/vifm
-	colors
-1
-d/home/vitor/.dotfiles/vifm/colors
-	COPYING
-1
-d/home/vitor/.dotfiles/vifm
-	colors
-1
-d/home/vitor/.dotfiles
-	vifm
-3
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/.dotfiles
-	init.el
-5
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor
-	Videos
-39
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/7itec/ct-api-server
-	package.json
-32
-d/home/vitor/stone/banking-panda
-	CHANGELOG.md
-19
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor
-	.dotfiles
-8
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/.dotfiles
-	nvim
-2
-d/home/vitor/.dotfiles/nvim
-	init.vim
-3
-d/home/vitor
-	elixir
-42
-d/home/vitor/elixir
-	blog
-1
-d/home/vitor/elixir/blog
-	mix.exs
-10
-d/home/vitor/elixir
-	elixir-ls
-1
-d/home/vitor
-	elixir
-42
-d/home/vitor/elixir/blog
-	lib
-4
-d/home/vitor/elixir/blog/lib
-	..
-0
-d/home/vitor/elixir/blog
-	mix.exs
-11
-d/home/vitor
-	elixir
-42
-d/home/vitor/elixir
-	elixir-ls
-1
-d/home/vitor/blog
-	..
-0
-d/home/vitor
-	blog
-41
-d/home
-	vitor
-1
-d/home/vitor
-	blog
-41
-d/home/vitor/blog
-	mix.exs
-10
-d/home/vitor
-	elixir
-42
-d/home/vitor/elixir
-	..
-0
-d/home/vitor
-	elixir
-42
-d/home/vitor/elixir
-	..
-0
-d/home/vitor
-	elixir
-41
-d/home/vitor/elixir
-	blog
-1
-d/home/vitor/elixir/blog
-	mix.exs
-10
-d/home/vitor/elixir
-	blog
-1
-d/home/vitor/elixir/blog
-	mix.exs
-10
-d/home/vitor/stone/banking-panda
-	mix.exs
-28
-d/home/vitor/elixir/blog
-	mix.exs
-11
-d/home/vitor/.local/share/vifm/Trash/002_blog
-	mix.exs
-11
-d/home/vitor/elixir/blog
-	test
-7
-d/home/vitor/.local/share/vifm/Trash/002_blog
-	deps
-4
-d/home/vitor/.local/share/vifm/Trash/002_blog/deps
-	..
-0
-d/home/vitor/.local/share/vifm/Trash/002_blog
-	lib
-5
-d/home/vitor/.local/share/vifm/Trash/002_blog/lib
-	..
-0
-d/home/vitor/.local/share/vifm/Trash/002_blog
-	lib
-5
-d/home/vitor/.local/share/vifm/Trash
-	002_blog
-10
-d/home/vitor/.local/share/vifm/Trash/002_blog
-	lib
-5
-d/home/vitor/.local/share/vifm/Trash
-	002_blog
-10
-d/home/vitor/.local/share/vifm
-	Trash
-1
-d/home/vitor/elixir/blog
-	priv
-6
-d/home/vitor/elixir/blog/priv
-	repo
-1
-d/home/vitor/elixir/blog/priv/repo
-	migrations
-1
-d/home/vitor/elixir/blog/priv/repo/migrations
-	..
-0
-d/home/vitor/elixir/blog/priv/repo
-	migrations
-1
-d/home/vitor/elixir/blog/priv
-	repo
-1
 d/home/vitor/elixir/blog
 	lib
 5
@@ -346,6 +109,243 @@ d/home/vitor/elixir/blog/lib/blog/users
 d/home/vitor/elixir/blog
 	lib
 5
+d/home/vitor
+	elixir
+32
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/stone/banking-panda
+	rel
+12
+d/home/vitor
+	elixir
+32
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/7itec/ct-api-server
+	package.json
+32
+d/home/vitor
+	elixir
+32
+d/home/vitor/7itec/ct-api-server
+	docker-compose.yml
+24
+d/home/vitor/elixir/blog/lib/blog/users/schemas
+	..
+0
+d/home/vitor/elixir/blog/lib/blog/users
+	schema.ex
+2
+d/home/vitor
+	elixir
+32
+d/home/vitor/stone/banking-panda
+	apps
+5
+d/home/vitor/stone/banking-panda/apps
+	..
+0
+d/home/vitor/stone/banking-panda
+	apps
+5
+d/home/vitor/stone/banking-panda/apps
+	..
+0
+d/home/vitor/stone/banking-panda
+	apps
+5
+d/home/vitor/stone/banking-panda/apps
+	panda_core
+1
+d/home/vitor/stone/banking-panda/apps/panda_core
+	mix.exs
+7
+d/home/vitor/stone/banking-panda/apps
+	panda_keycloak
+4
+d/home/vitor/stone/banking-panda/apps/panda_keycloak
+	lib
+1
+d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib
+	panda_keycloak
+1
+d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib/panda_keycloak
+	ecto
+5
+d/home/vitor/stone/banking-panda/apps/panda_keycloak/lib
+	panda_keycloak
+1
+d/home/vitor/stone/banking-panda/apps/panda_keycloak
+	lib
+1
+d/home/vitor/stone/banking-panda/apps
+	panda_external_clients
+2
+d/home/vitor/stone/banking-panda
+	apps
+5
+d/home/vitor/stone/banking-panda/apps
+	panda_www
+7
+d/home/vitor/stone/banking-panda/apps/panda_www
+	lib
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	www
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
+	..
+0
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	www
+2
+d/home/vitor/stone/banking-panda/apps/panda_www
+	lib
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	release
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/release
+	..
+0
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	www
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
+	controllers
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
+	api
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
+	me
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api/me
+	me_kyc_controller.ex
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
+	organizations
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api/organizations
+	organizations_kyc_controller.ex
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
+	users
+4
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api/users
+	..
+0
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
+	users
+4
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
+	api
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
+	controllers
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	www
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
+	controllers
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
+	api
+2
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
+	users
+4
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
+	resources
+3
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/resources
+	permissions_controller.ex
+3
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers
+	resources
+3
+d/home/vitor/stone/banking-panda/apps/panda_www/lib/www
+	controllers
+1
+d/home/vitor/stone/banking-panda/apps/panda_www/lib
+	www
+2
+d/home/vitor/stone/banking-panda/apps/panda_www
+	lib
+1
+d/home/vitor/stone/banking-panda/apps
+	panda_www
+7
+d/home/vitor
+	elixir
+32
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor
+	elixir
+32
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/stone/banking-panda
+	mix.exs
+28
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/stone/banking-panda
+	mix.exs
+29
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/stone/banking-panda
+	mix.exs
+29
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
+d/home/vitor/stone/banking-panda
+	mix.exs
+29
+d/home/vitor/.dotfiles
+	nvim
+2
+d/home/vitor/.dotfiles/nvim
+	init.vim
+3
 d
 
 # Right window history (oldest to newest):
@@ -358,6 +358,7 @@ D/home/vitor
 D
 
 # Command line history (oldest to newest):
+:touch schema.ex
 :mkdir users
 :touch users.ex
 :mkdir schemas
@@ -381,7 +382,7 @@ prandom.dat
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/vitor/.local/share/vifm/Trash/002_blog
+""/home/vitor/.local/share/vifm/Trash/001_test
 
 # Directory stack (oldest to newest):
 
@@ -432,6 +433,14 @@ t/home/vitor/.local/share/vifm/Trash/002_blog
 	/home/vitor/blog
 t/home/vitor/.local/share/vifm/Trash/000_docker-compose
 	/home/vitor/elixir/blog/docker-compose
+t/home/vitor/.local/share/vifm/Trash/001_test
+	/home/vitor/stone/banking-panda/test
+t/home/vitor/.local/share/vifm/Trash/000_users.ex
+	/home/vitor/elixir/blog/lib/blog/users/users.ex
+t/home/vitor/.local/share/vifm/Trash/000_schema.ex
+	/home/vitor/elixir/blog/lib/blog/users/schema.ex
+t/home/vitor/.local/share/vifm/Trash/000_init.el
+	/home/vitor/.dotfiles/init.el
 
 # State:
 f

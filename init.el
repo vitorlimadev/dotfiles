@@ -26,7 +26,7 @@
 ; Setting font family and size for GUI
 (set-face-attribute 'default nil :font "Source Code Pro" :height 150)
 ; Open eshell
-(global-set-key (kbd "C-x t") 'term)
+(global-set-key (kbd "M-t") 'term)
 ; Set folder for backup files. Without it, emacs clutters your folders with files ending with ~
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
@@ -143,7 +143,6 @@
   
 ; Auto-complete interface
 (use-package company
-  :ensure t
   :diminish company-mode
   :bind ("C-\\" . company-complete)  
   :config
@@ -205,6 +204,9 @@
 (use-package treemacs-projectile
   :after (treemacs projectile))
 
+; Vim like modes
+(use-package evil)
+(evil-mode 1)
 
 
 
