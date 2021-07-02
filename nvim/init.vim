@@ -44,12 +44,14 @@ map <C-p> "+p
 
 " Open file explorer
 nmap <silent> <Leader>fe :EditVifm<CR>
+" nmap <silent> <Leader>fe :Ex<CR>
+" let g:netrw_banner=0
 
 " Buffers list
 map <silent> <Leader>b :Buffers<CR>
 
 " Kill current buffer
-map <silent> <Leader>kb :bdelete<CR>
+map <silent> <Leader>kb :Bunlink<CR>
 
 " Open terminal
 nmap <silent> <Leader>t :sp term://zsh<CR>
@@ -167,6 +169,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 " File tree
 Plug 'vifm/vifm.vim'
+" Fixes buffer delete command
+Plug 'orlp/vim-bunlink'
 
 call plug#end()
 
