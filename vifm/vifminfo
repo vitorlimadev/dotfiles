@@ -46,9 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api/me
-	me_kyc_controller.ex
-2
 d/home/vitor/stone/banking-panda/apps/panda_www/lib/www/controllers/api
 	organizations
 2
@@ -345,7 +342,10 @@ d/home/vitor/elixir/blog
 12
 d/home/vitor/stone/banking-panda
 	mix.exs
-28
+22
+d/home/vitor
+	android-studio
+9
 d
 
 # Right window history (oldest to newest):

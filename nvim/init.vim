@@ -19,9 +19,9 @@ set autoindent
 set signcolumn=yes
 set nohlsearch
 set hidden
-set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set splitbelow
 
 
 
@@ -39,31 +39,29 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 " Copying/pasting with system's native copy/paste
-vnoremap <C-y> "+y
-map <C-p> "+p
+vnoremap y "+y
+noremap p "+p
 
-" Open file explorer
-nmap <silent> <Leader>fe :EditVifm<CR>
-" nmap <silent> <Leader>fe :Ex<CR>
-" let g:netrw_banner=0
+" File explorer
+map <silent> <Leader>fe <cmd>Telescope file_browser<CR>
 
 " Buffers list
-map <silent> <Leader>b :Buffers<CR>
+map <silent> <Leader>b <cmd>Telescope buffers<CR>
 
 " Kill current buffer
 map <silent> <Leader>kb :Bunlink<CR>
 
 " Open terminal
-nmap <silent> <Leader>t :sp term://zsh<CR>
+nmap <silent> <Leader>t :new +resize8 term://fish<CR>
 
 " Remaping the weird shortcut to exit terminal mode
 tnoremap <C-\> <C-\><C-n>
 
 " Project wide search
-nmap <Leader>ps :Rg<SPACE>
+nmap <Leader>ps <cmd>Telescope live_grep<CR>
 
-" File search (only works in Git repo)
-map <silent> <Leader>fs :GFiles<CR>
+" File search
+map <silent> <Leader>fs <cmd>Telescope find_files<CR>
 
 " Resizing vertical windows
 nmap <silent> <Up> :resize -2<CR>
@@ -73,17 +71,14 @@ nmap <silent> <Right> :vertical resize +2<CR>
 
 " ----- GIT -----
 
-" Git files
-map <silent> <Leader>gf :GFiles?<CR>
-
 " Git status
 map <silent> <Leader>gs :Git<CR>
 
 " Select left change/diff (inside :Gvdiffsplit)
-map <silent> <Leader>gdl :diffget //2
+map <silent> <Leader>gdl :diffget //2<CR>
 
 " Select right change/diff (inside :Gvdiffsplit)
-map <silent> <Leader>gdr :diffget //3
+map <silent> <Leader>gdr :diffget //3<CR>
 
 " Git commit
 map <silent> <Leader>gc :Git commit<CR>
@@ -111,19 +106,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Project search
-Plug 'jremmen/vim-ripgrep'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " Themes
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'vim-airline/vim-airline'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" File tree
-Plug 'vifm/vifm.vim'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
 
