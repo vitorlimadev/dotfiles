@@ -42,9 +42,6 @@ nnoremap <SPACE> <Nop>
 vnoremap <C-y> "+y
 map <C-p> "+p
 
-" Open file explorer
-nmap <silent> <Leader>fe :EditVifm<CR>
-
 " Buffers list
 map <silent> <Leader>b :Buffers<CR>
 
@@ -91,7 +88,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Show documentation
-nnoremap <silent> H :call <SID>show_documentation()<CR>
+nnoremap <silent> <Leader>h :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -165,8 +162,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" File tree
-Plug 'vifm/vifm.vim'
 
 call plug#end()
 
