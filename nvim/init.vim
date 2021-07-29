@@ -39,11 +39,8 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 " Copying/pasting with system's native copy/paste
-vnoremap y "+y
-noremap p "+p
-
-" File explorer
-map <silent> <Leader>fe <cmd>Telescope file_browser<CR>
+vnoremap <C-y> "+y
+noremap <C-p> "+p
 
 " Buffers list
 map <silent> <Leader>b <cmd>Telescope buffers<CR>
@@ -52,7 +49,7 @@ map <silent> <Leader>b <cmd>Telescope buffers<CR>
 map <silent> <Leader>kb :Bunlink<CR>
 
 " Open terminal
-nmap <silent> <Leader>t :new +resize8 term://fish<CR>
+nmap <silent> <Leader>t :new +resize8 term://zsh<CR>
 
 " Remaping the weird shortcut to exit terminal mode
 tnoremap <C-\> <C-\><C-n>
@@ -111,7 +108,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " Themes
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'vim-airline/vim-airline'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
