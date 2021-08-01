@@ -34,9 +34,13 @@ set splitbelow
 
 " ---------- Remaps ----------
 
+
 " Remaping leader to space
 let mapleader=" "
 nnoremap <SPACE> <Nop>
+
+" File explorer
+nnoremap <Leader>fe :NvimTreeToggle<CR>
 
 " Copying/pasting with system's native copy/paste
 vnoremap <C-y> "+y
@@ -86,6 +90,9 @@ map <silent> <Leader>gl :Git log<CR>
 " Git push
 map <silent> <Leader>gp :Git push<CR>
 
+" Git blame
+map <silent> <Leader>gb :Gblame<CR>
+
 
 
 
@@ -115,6 +122,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
+" File tree
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 
