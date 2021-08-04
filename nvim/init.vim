@@ -16,7 +16,7 @@ set incsearch
 set nowrap
 set tabstop=2
 set autoindent
-set signcolumn=yes
+" set signcolumn=yes
 set nohlsearch
 set hidden
 set updatetime=300
@@ -58,7 +58,7 @@ nmap <silent> <Leader>t :new +resize8 term://zsh<CR>
 " Remaping the weird shortcut to exit terminal mode
 tnoremap <C-\> <C-\><C-n>
 
-" Project wide search
+" Project wide search (needs ripgrep to work)
 nmap <Leader>ps <cmd>Telescope live_grep<CR>
 
 " File search
@@ -69,6 +69,9 @@ nmap <silent> <Up> :resize -2<CR>
 nmap <silent> <Down> :resize +2<CR>
 nmap <silent> <Left> :vertical resize -2<CR>
 nmap <silent> <Right> :vertical resize +2<CR>
+
+" Focus mode
+map <silent> <Leader>fm :Goyo<CR>
 
 " ----- GIT -----
 
@@ -114,7 +117,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " Themes
-Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'drewtempelmeyer/palenight.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
@@ -125,6 +128,8 @@ Plug 'orlp/vim-bunlink'
 " File tree
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+" Focus mode
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -139,7 +144,7 @@ call plug#end()
 
 " ---------- Theme ---------- 
 
-colorscheme palenight
+" colorscheme palenight
 
 " Always transparent background
 hi Normal guibg=NONE ctermbg=NONE
