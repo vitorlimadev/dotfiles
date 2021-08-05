@@ -2,6 +2,7 @@
 
 syntax enable
 set number
+set relativenumber
 set scrolloff=15         
 set sidescrolloff=15
 set sidescroll=1
