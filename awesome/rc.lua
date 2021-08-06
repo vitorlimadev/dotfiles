@@ -200,8 +200,8 @@ awful.screen.connect_for_each_screen(function(s)
 			position = "top",
 			screen = s,
 			height = 28,
-			shape  = gears.shape.rounded_rect,
-			border_width = 5
+			--shape  = gears.shape.rounded_rect,
+			--border_width = 5
 		})
 
     -- Add widgets to the wibox
@@ -324,7 +324,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
               {description = "dmenu (application launcher)", group = "custom"}),
 
-    awful.key({ modkey },            "b",     function () awful.util.spawn("brave-browser") end,
+    awful.key({ modkey },            "b",     function () awful.util.spawn("brave") end,
               {description = "brave browser", group = "custom"}),
 
     awful.key({ modkey },            "f",     function () awful.util.spawn("thunar") end,
@@ -577,9 +577,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
 
 -- Personal preference
-beautiful.useless_gap = 20
+beautiful.useless_gap = 0
