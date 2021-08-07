@@ -17,13 +17,12 @@ set incsearch
 set nowrap
 set tabstop=2
 set autoindent
-" set signcolumn=yes
 set nohlsearch
 set hidden
 set updatetime=300
 set shortmess+=c
 set splitbelow
-
+hi Normal guibg=NONE ctermbg=NONE
 
 
 
@@ -39,9 +38,6 @@ set splitbelow
 " Remaping leader to space
 let mapleader=" "
 nnoremap <SPACE> <Nop>
-
-" File explorer
-nnoremap <Leader>fe :NvimTreeToggle<CR>
 
 " Copying/pasting with system's native copy/paste
 vnoremap <C-y> "+y
@@ -117,8 +113,6 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" Themes
-" Plug 'drewtempelmeyer/palenight.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
@@ -126,26 +120,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
-" File tree
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
 " Focus mode
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
-
-
-
-
-
-
-
-
-
-
-" ---------- Theme ---------- 
-
-" colorscheme palenight
-
-" Always transparent background
-hi Normal guibg=NONE ctermbg=NONE
