@@ -1,0 +1,268 @@
+Vitor Lima's Emacs Config
+
+* General settings
+
+** Remove startup page
+   #+BEGIN_SRC emacs-lisp
+     (setq inhibit-startup-message t)
+   #+END_SRC
+
+** Transparent background
+   #+BEGIN_SRC emacs-lisp
+     (set-frame-parameter (selected-frame) 'alpha '(95 90))
+     (add-to-list 'default-frame-alist '(alpha 95 90))
+   #+END_SRC
+   
+** Disable scrollbar
+   #+BEGIN_SRC emacs-lisp
+     (scroll-bar-mode -1)
+   #+END_SRC
+
+** Disable the toolbar
+   #+BEGIN_SRC emacs-lisp
+     (tool-bar-mode -1)
+   #+END_SRC
+
+** Disable tooltips
+   #+BEGIN_SRC emacs-lisp
+     (tooltip-mode -1)
+   #+END_SRC
+   
+** Buffer margins
+   #+BEGIN_SRC emacs-lisp
+     (set-fringe-mode 10)
+   #+END_SRC
+
+** Disable menubar
+   #+BEGIN_SRC emacs-lisp
+   (menu-bar-mode -1)
+   #+END_SRC
+   
+** Enable line numbers
+   #+BEGIN_SRC emacs-lisp
+     (global-display-line-numbers-mode t)
+   #+END_SRC
+
+** Disable line numbers for some modes
+   #+BEGIN_SRC emacs-lisp
+     (dolist (mode '(org-mode-hook
+		 term-mode-hook
+		 shell-mode-hook
+		 eshell-mode-hook
+	         treemacs-mode-hook))
+	  (add-hook mode (lambda () (display-line-numbers-mode -1))))
+   #+END_SRC
+
+** Set folder for backup files.
+   #+BEGIN_SRC emacs-lisp
+     (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+   #+END_SRC
+
+** Replace yes and no with y and n
+   #+BEGIN_SRC emacs-lisp
+     (fset 'yes-or-no-p 'y-or-n-p)
+   #+END_SRC
+
+** Setting font family and size for GUI
+   #+BEGIN_SRC emacs-lisp
+     (set-face-attribute 'default nil :font "SauceCodePro Nerd Font Mono" :height 120)
+   #+END_SRC
+
+   
+* Package config
+
+** Make availble package functions
+   #+BEGIN_SRC emacs-lisp
+     (require 'package)
+   #+END_SRC
+
+** Add MELPA package source
+   #+BEGIN_SRC emacs-lisp
+     (customize-set-variable 'package-archives
+			     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")))
+   #+END_SRC
+
+** Initializes package list
+   #+BEGIN_SRC emacs-lisp
+     (package-initialize)
+   #+END_SRC
+
+** Fetch the list of available packages
+   #+BEGIN_SRC emacs-lisp
+     (unless package-archive-contents
+       (package-refresh-contents))
+   #+END_SRC
+
+** Only evaluate this when compiling this file
+   #+BEGIN_SRC emacs-lisp
+     (eval-when-compile
+       ; For each package on the list do
+       (dolist (package '(use-package diminish bind-key))
+	 ; Install if not yet installed
+	 (unless (package-installed-p package)
+	   (package-install package))
+	 ; Require package making it available on the rest of the configuration
+	 (require package)))
+   #+END_SRC
+
+** Always ensure packages
+   #+BEGIN_SRC emacs-lisp
+     (setq use-package-always-ensure t)
+   #+END_SRC
+
+
+* Packages
+
+** Projectile (Project management library)
+   #+BEGIN_SRC emacs-lisp
+     (use-package projectile
+       :config
+       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+       (setq projectile-completion-system 'ivy)
+       (projectile-mode +1))
+   #+END_SRC
+  
+** Magit (Git interface)
+   #+BEGIN_SRC emacs-lisp
+     (use-package magit
+       :bind ("C-c m s" . magit-status))
+   #+END_SRC
+** Fuzzy finders
+*** Ivy (Minibuffers)
+   #+BEGIN_SRC emacs-lisp
+     (use-package ivy)
+     (ivy-mode 1)
+   #+END_SRC
+
+*** Counsel (Enhances Ivy)
+   #+BEGIN_SRC emacs-lisp
+     (use-package counsel
+       :bind (("C-x b" . counsel-ibuffer)
+	      ("C-x f" . counsel-find-file))
+       :config
+       (setq ivy-initial-inputs-alist nil))
+   #+END_SRC
+
+***  Swiper (Search in file)
+   #+BEGIN_SRC emacs-lisp
+     (use-package swiper
+       :bind (("C-s" . swiper)))
+   #+END_SRC
+   
+***  Ripgrep (Search for words/therms inside a project)
+   #+BEGIN_SRC emacs-lisp   
+     (use-package ripgrep)
+   #+END_SRC
+   
+** Which key (Shows possible commands when pressing C or M)
+   #+BEGIN_SRC emacs-lisp
+     (use-package which-key
+       :init (which-key-mode)
+       :diminish which-key-mode
+       :config
+       (setq which-key-idle-delay 1))
+   #+END_SRC
+
+** Doom themes (Theme library)
+   #+BEGIN_SRC emacs-lisp
+     (use-package doom-themes
+       :config
+       ; Global settings (defaults)
+       (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+	     doom-themes-enable-italic t) ; if nil, italics is universally disabled
+       (load-theme 'doom-one t)
+       ; Enable flashing mode-line on errors
+       (doom-themes-visual-bell-config)
+       (doom-themes-org-config))
+   #+END_SRC
+   
+** Company (Auto complete interface)
+   #+BEGIN_SRC emacs-lisp
+     (use-package company
+       :diminish company-mode
+       :bind ("M-/" . company-complete)  
+       :config
+       (global-company-mode))
+   #+END_SRC
+
+** LSP-Mode (Language server)
+   #+BEGIN_SRC emacs-lisp
+     (use-package lsp-mode
+       :init
+       (add-to-list 'exec-path "~/elixir/elixir-ls/release/erl23")
+       :commands (lsp lsp-deferred)
+       :hook
+       (elixir-mode . lsp-deferred)
+       :config
+       (setq lsp-auto-guess-root t)
+       (setq lsp-file-watch-ignored
+	   '("[/\\\\]\\.git$"
+	     "[/\\\\]\\.elixir_ls$"
+	     "[/\\\\]_build$"
+	     "[/\\\\]assets$"
+	     "[/\\\\]cover$"
+	     "[/\\\\]node_modules$"
+	     "[/\\\\]submodules$"
+	     )))
+   #+END_SRC
+
+** LSP-UI (Functions/modules documentation on hover/key press)
+   #+BEGIN_SRC emacs-lisp
+     (use-package lsp-ui
+       :commands lsp-ui-mode
+       :after (lsp-mode)
+       :init
+       (setq lsp-ui-doc-enable nil
+	     lsp-ui-doc-use-webkit t         
+	     lsp-ui-sideline-enable nil
+	     lsp-ui-peek-enable nil) 
+       :bind
+       ("M-d" . lsp-ui-doc-show)
+       ("M-h" . lsp-ui-doc-hide))
+   #+END_SRC
+
+** Elixir-mode (To work with Elixir)
+   #+BEGIN_SRC emacs-lisp
+     (use-package elixir-mode)
+   #+END_SRC
+
+** Reformatter (Code foramtter)
+   #+BEGIN_SRC emacs-lisp
+     (use-package reformatter
+       :config
+       ; Adds a reformatter configuration called "+elixir-format"
+       ; This uses "mix format -"
+       (reformatter-define +elixir-format
+	 :program "mix"
+	 :args '("format" "-"))
+       ; defines a function that looks for the .formatter.exs file used by mix format
+       (defun +set-default-directory-to-mix-project-root (original-fun &rest args)
+	 (if-let* ((mix-project-root (and buffer-file-name
+					  (locate-dominating-file buffer-file-name
+								  ".formatter.exs"))))
+	     (let ((default-directory mix-project-root))
+	       (apply original-fun args))
+	   (apply original-fun args)))
+       ; adds an advice to the generated function +elxir-format-region that sets the proper root dir
+       ; mix format needs to be run from the root directory otherwise it wont use the formatter configuration
+       (advice-add '+elixir-format-region :around #'+set-default-directory-to-mix-project-root)
+       ; Adds a hook to the major-mode that will add the generated function +elixir-format-on-save-mode
+       ; So, every time we save an elixir file it will try to find a .formatter.exs and then run mix format from
+       ; that file's directory
+       (add-hook 'elixir-mode-hook #'+elixir-format-on-save-mode))
+   #+END_SRC
+
+** Evil mode (VIM keybindings)
+   #+BEGIN_SRC emacs-lisp
+     ;(use-package evil
+     ;  :init (evil-mode 1))
+   #+END_SRC
+
+   
+* Keybindings
+
+** Open eshell
+   #+BEGIN_SRC emacs-lisp
+     (global-set-key (kbd "C-x t") 'eshell)
+   #+END_SRC
+

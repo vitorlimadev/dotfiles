@@ -323,8 +323,11 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
               {description = "dmenu (application launcher)", group = "custom"}),
-
+	      
     awful.key({ modkey },            "b",     function () awful.util.spawn("brave") end,
+              {description = "brave browser", group = "custom"}),
+
+    awful.key({ modkey },            "e",     function () awful.util.spawn("emacs") end,
               {description = "brave browser", group = "custom"}),
 
     awful.key({ modkey },            "f",     function () awful.util.spawn("thunar") end,
@@ -457,6 +460,10 @@ root.keys(globalkeys)
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
+    -- Emacs fix
+    { rule = { class = "Emacs" },
+     properties = { size_hints_honor = false } },
+     
     -- All clients will match this rule.
     { rule = { },
       properties = { border_width = beautiful.border_width,
