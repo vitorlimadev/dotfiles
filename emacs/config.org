@@ -1,7 +1,7 @@
 Vitor Lima's Emacs Config
 
 * General settings
-
+  
 ** Remove startup page
    #+BEGIN_SRC emacs-lisp
      (setq inhibit-startup-message t)
@@ -35,7 +35,7 @@ Vitor Lima's Emacs Config
 
 ** Disable menubar
    #+BEGIN_SRC emacs-lisp
-   (menu-bar-mode -1)
+     (menu-bar-mode -1)
    #+END_SRC
    
 ** Enable line numbers
@@ -65,7 +65,7 @@ Vitor Lima's Emacs Config
 
 ** Setting font family and size for GUI
    #+BEGIN_SRC emacs-lisp
-     (set-face-attribute 'default nil :font "SauceCodePro Nerd Font Mono" :height 120)
+     (set-face-attribute 'default nil :font "SauceCodePro Nerd Font Mono" :height 140)
    #+END_SRC
 
    
@@ -257,12 +257,12 @@ Vitor Lima's Emacs Config
      ;(use-package evil
      ;  :init (evil-mode 1))
    #+END_SRC
-
+   
    
 * Keybindings
 
 ** Open eshell
    #+BEGIN_SRC emacs-lisp
-     (global-set-key (kbd "C-x t") 'eshell)
+     (global-set-key (kbd "C-c t") 'eshell)
    #+END_SRC
 

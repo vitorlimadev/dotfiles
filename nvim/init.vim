@@ -24,6 +24,14 @@ set shortmess+=c
 set splitbelow
 hi Normal guibg=NONE ctermbg=NONE
 
+set statusline=
+set statusline +=%3*\ %y%*                "file type
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L\ %*							"total lines
+
+
 
 
 
@@ -34,32 +42,13 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " ---------- Remaps ----------
 
-
 " Remaping leader to space
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 " Copying/pasting with system's native copy/paste
 vnoremap <C-y> "+y
-noremap <C-p> "+p
-
-" Buffers list
-map <silent> <Leader>b <cmd>Telescope buffers<CR>
-
-" Kill current buffer
-map <silent> <Leader>kb :Bunlink<CR>
-
-" Open terminal
-nmap <silent> <Leader>t :new +resize8 term://zsh<CR>
-
-" Remaping the weird shortcut to exit terminal mode
-tnoremap <C-\> <C-\><C-n>
-
-" Project wide search (needs ripgrep to work)
-nmap <Leader>ps <cmd>Telescope live_grep<CR>
-
-" File search
-map <silent> <Leader>fs <cmd>Telescope find_files<CR>
+map <C-p> "+p
 
 " Resizing vertical windows
 nmap <silent> <Up> :resize -2<CR>
@@ -70,7 +59,69 @@ nmap <silent> <Right> :vertical resize +2<CR>
 " Focus mode
 map <silent> <Leader>fm :Goyo<CR>
 
+" ----- Files/Buffers -----
+
+" File search (only works in Git repo)
+map <silent> <Leader>fs :GFiles<CR>
+
+" Buffers list
+map <silent> <Leader>b :Buffers<CR>
+
+" Kill current buffer
+map <silent> <Leader>kb :Bunlink<CR>
+
+" Project wide search
+nmap <Leader>ps :Rg<SPACE>
+
+" ----- CoC -----
+
+" Goto definition
+nmap <silent> <Leader>gtd <Plug>(coc-definition)
+
+" Goto implementation
+nmap <silent> <Leader>gti <Plug>(coc-implementation)
+
+" Goto references
+nmap <silent> <Leader>gtr <Plug>(coc-references)
+
+" Code navigation and diagnostics keybindings.
+nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
+nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
+
+" TAB to trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Show documentation
+nnoremap <silent> <Leader>h :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Navigate in documentation panel
+nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
+inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+
 " ----- GIT -----
+
+" Git files
+map <silent> <Leader>gf :GFiles?<CR>
 
 " Git status
 map <silent> <Leader>gs :Git<CR>
@@ -104,15 +155,14 @@ map <silent> <Leader>gb :Gblame<CR>
 
 " ---------- Plugins ----------
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 " Autocomplete
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-" Fuzzy finder
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Fuzzy finders
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
@@ -124,3 +174,5 @@ Plug 'orlp/vim-bunlink'
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
+
+let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp']
