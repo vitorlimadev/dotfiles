@@ -1,3 +1,3 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": ["elixir", "c"] 
+	"coc.preferences.formatOnSaveFiletypes": ["elixir", "c", "html"] 
 }
