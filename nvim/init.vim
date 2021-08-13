@@ -24,13 +24,6 @@ set shortmess+=c
 set splitbelow
 hi Normal guibg=NONE ctermbg=NONE
 
-set statusline=
-set statusline +=%3*\ %y%*              "file type
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L\ %*							"total lines
-
 
 
 
@@ -172,11 +165,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'orlp/vim-bunlink'
 " Focus mode
 Plug 'junegunn/goyo.vim'
-" Theme
-Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
 
-colorscheme nord
 let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html']
