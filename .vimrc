@@ -54,6 +54,9 @@ map <silent> <Leader>fm :Goyo<CR>
 
 " ----- Files/Buffers -----
 
+" File tree
+map <silent> <Leader>ft :Fern . -reveal=%<CR>
+
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
 
@@ -145,10 +148,9 @@ map <silent> <Leader>gb :Gblame<CR>
 
 
 
-
 " ---------- Plugins ----------
 
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -163,10 +165,12 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
-Plug 'joshdick/onedark.vim'
+" File tree
+Plug 'lambdalisue/fern.vim'
+" Theme
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
-colorscheme onedark
-
+colorscheme palenight
 let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html']
