@@ -2,6 +2,7 @@
 
 syntax enable
 set number
+set relativenumber
 set scrolloff=15         
 set sidescrolloff=15
 set sidescroll=1
@@ -16,12 +17,19 @@ set incsearch
 set nowrap
 set tabstop=2
 set autoindent
-set signcolumn=yes
 set nohlsearch
 set hidden
-set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set splitbelow
+
+" GVIM settings
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
+set guioptions-=m  "menu bar
+
+" Terminal
+hi Normal guibg=NONE ctermbg=NONE
 
 
 
@@ -42,27 +50,40 @@ nnoremap <SPACE> <Nop>
 vnoremap <C-y> "+y
 map <C-p> "+p
 
-" Buffers list
-map <silent> <Leader>b :Buffers<CR>
+" Resizing vertical windows
+nmap <silent> <Up> :resize -2<CR>
+nmap <silent> <Down> :resize +2<CR>
+nmap <silent> <Left> :vertical resize -2<CR>
+nmap <silent> <Right> :vertical resize +2<CR>
 
-" Kill current buffer
-map <silent> <Leader>kb :bdelete<CR>
+" Focus mode
+map <silent> <Leader>fm :Goyo<CR>
 
-" Open terminal
-nmap <silent> <Leader>t :sp term://zsh<CR>
+" ----- Files/Buffers -----
 
-" Remaping the weird shortcut to exit terminal mode
-tnoremap <C-\> <C-\><C-n>
-
-" Project wide search
-nmap <Leader>ps :Rg<SPACE>
+" File tree
+nnoremap <silent> <Leader>ft :NERDTreeToggle<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Remove help UI
+let NERDTreeMinimalUI=1
 
 " File search (only works in Git repo)
 map <silent> <Leader>fs :GFiles<CR>
 
-" Code navigation and diagnostics keybindings.
-nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
+" Buffers list
+map <silent> <Leader>b :Buffers<CR>
+
+" Kill current buffer
+map <silent> <Leader>kb :Bunlink<CR>
+
+" Project wide search
+nmap <Leader>ps :Rg<SPACE>
+
+" ----- CoC -----
 
 " Goto definition
 nmap <silent> <Leader>gtd <Plug>(coc-definition)
@@ -73,8 +94,9 @@ nmap <silent> <Leader>gti <Plug>(coc-implementation)
 " Goto references
 nmap <silent> <Leader>gtr <Plug>(coc-references)
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Code navigation and diagnostics keybindings.
+nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
+nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
 
 " TAB to trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -106,12 +128,6 @@ nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<
 inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
-" Resizing vertical windows
-nmap <silent> <Up> :resize -2<CR>
-nmap <silent> <Down> :resize +2<CR>
-nmap <silent> <Left> :vertical resize -2<CR>
-nmap <silent> <Right> :vertical resize +2<CR>
-
 " ----- GIT -----
 
 " Git files
@@ -121,10 +137,10 @@ map <silent> <Leader>gf :GFiles?<CR>
 map <silent> <Leader>gs :Git<CR>
 
 " Select left change/diff (inside :Gvdiffsplit)
-map <silent> <Leader>gdl :diffget //2
+map <silent> <Leader>gdl :diffget //2<CR>
 
 " Select right change/diff (inside :Gvdiffsplit)
-map <silent> <Leader>gdr :diffget //3
+map <silent> <Leader>gdr :diffget //3<CR>
 
 " Git commit
 map <silent> <Leader>gc :Git commit<CR>
@@ -134,6 +150,9 @@ map <silent> <Leader>gl :Git log<CR>
 
 " Git push
 map <silent> <Leader>gp :Git push<CR>
+
+" Git blame
+map <silent> <Leader>gb :Gblame<CR>
 
 
 
@@ -148,54 +167,26 @@ map <silent> <Leader>gp :Git push<CR>
 
 call plug#begin('~/.vim/plugged')
 
+" File tree
+Plug 'preservim/nerdtree'
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Fuzzy finder
+" Fuzzy finders
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Project search
 Plug 'jremmen/vim-ripgrep'
-" Themes
-Plug 'drewtempelmeyer/palenight.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
 " Git integration
 Plug 'tpope/vim-fugitive'
+" Fixes buffer delete command
+Plug 'orlp/vim-bunlink'
+" Theme
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
+colorscheme onedark
 
-
-
-
-
-
-
-
-
-" ---------- Theme ---------- 
-
-colorscheme palenight
-let g:lightline = { 'colorscheme': 'palenight' }
-
-" Always transparent background
-hi Normal guibg=NONE ctermbg=NONE
-
-
-
-
-
-
-
-
-
-
-" ---------- Coc config ----------
-
-let g:coc_global_extensions = [
-	\ 'coc-elixir',
-	\ ]
-
-" Autoformat elixir files
-autocmd FileType elixir setlocal formatprg=mix\ format\ -
+let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html']
