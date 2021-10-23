@@ -22,13 +22,6 @@ set hidden
 set updatetime=300
 set shortmess+=c
 set splitbelow
-
-" GVIM settings
-set guioptions-=T  "toolbar
-set guioptions-=r  "scrollbar
-set guioptions-=m  "menu bar
-
-" Terminal
 hi Normal guibg=NONE ctermbg=NONE
 
 
@@ -56,13 +49,10 @@ nmap <silent> <Down> :resize +2<CR>
 nmap <silent> <Left> :vertical resize -2<CR>
 nmap <silent> <Right> :vertical resize +2<CR>
 
-" Focus mode
-map <silent> <Leader>fm :Goyo<CR>
-
 " ----- Files/Buffers -----
 
 " File tree
-nnoremap <silent> <Leader>ft :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>fe :NERDTreeToggle<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
@@ -81,8 +71,8 @@ map <silent> <Leader>b :Buffers<CR>
 map <silent> <Leader>kb :Bunlink<CR>
 
 " Project wide search
-nmap <Leader>ps :Rg<SPACE>
-
+nmap <Leader>ps :CtrlSF<SPACE>
+let g:ctrlsf_default_root = 'git'
 " ----- CoC -----
 
 " Goto definition
@@ -165,7 +155,7 @@ map <silent> <Leader>gb :Gblame<CR>
 
 " ---------- Plugins ----------
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 " File tree
 Plug 'preservim/nerdtree'
@@ -174,7 +164,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Fuzzy finders
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'dyng/ctrlsf.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
@@ -184,9 +174,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'orlp/vim-bunlink'
 " Theme
 Plug 'joshdick/onedark.vim'
+" Discord Rich Presence
+Plug 'vimsence/vimsence'
 
 call plug#end()
 
 colorscheme onedark
+set background=dark
 
-let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html']
+let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html', 'coc-solargraph']
