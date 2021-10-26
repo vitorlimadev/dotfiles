@@ -1,6 +1,8 @@
 "------- Personal preferences ----------
 
 syntax enable
+set background=dark
+set autoread
 set number
 set relativenumber
 set scrolloff=15         
@@ -23,6 +25,7 @@ set updatetime=300
 set shortmess+=c
 set splitbelow
 hi Normal guibg=NONE ctermbg=NONE
+
 
 
 
@@ -73,50 +76,6 @@ map <silent> <Leader>kb :Bunlink<CR>
 " Project wide search
 nmap <Leader>ps :CtrlSF<SPACE>
 let g:ctrlsf_default_root = 'git'
-" ----- CoC -----
-
-" Goto definition
-nmap <silent> <Leader>gtd <Plug>(coc-definition)
-
-" Goto implementation
-nmap <silent> <Leader>gti <Plug>(coc-implementation)
-
-" Goto references
-nmap <silent> <Leader>gtr <Plug>(coc-references)
-
-" Code navigation and diagnostics keybindings.
-nmap <silent> <Leader>wp <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>wn <Plug>(coc-diagnostic-next)
-
-" TAB to trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Show documentation
-nnoremap <silent> <Leader>h :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Navigate in documentation panel
-nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
-nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
-inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " ----- GIT -----
 
@@ -144,6 +103,20 @@ map <silent> <Leader>gp :Git push<CR>
 " Git blame
 map <silent> <Leader>gb :Gblame<CR>
 
+" ----- Mix -----
+
+nmap <silent> <Leader>mf :call <SID>mix_format()<CR>
+nmap <silent> <Leader>mt :call <SID>mix_test()<CR>
+
+function s:mix_format()
+	execute '!mix format %'
+endfunction
+
+function s:mix_test()
+	execute '!mix test %:' . line(".")
+endfunction
+
+
 
 
 
@@ -159,27 +132,25 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " File tree
 Plug 'preservim/nerdtree'
-" Autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Fuzzy finders
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
+" Put end after do in Elixir/Ruby
 Plug 'tpope/vim-endwise'
 " Git integration
 Plug 'tpope/vim-fugitive'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
-" Theme
-Plug 'joshdick/onedark.vim'
 " Discord Rich Presence
 Plug 'vimsence/vimsence'
+" Surrond words/sentences in tags
+Plug 'tpope/vim-surround'
+" Comment lines/words
+Plug 'tpope/vim-commentary'
+" Theme
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
-
-colorscheme onedark
-set background=dark
-
-let g:coc_global_extensions = ['coc-elixir', 'coc-clangd', 'coc-vimlsp', 'coc-html', 'coc-solargraph']
