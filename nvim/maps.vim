@@ -17,27 +17,23 @@ nmap <silent> <Right> :vertical resize +2<CR>
 " ---------- Files/Buffers ----------
 
 " File tree
-nnoremap <silent> <Leader>fe :NERDTreeToggle<CR>
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-" Remove help UI
-let NERDTreeMinimalUI=1
+nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 
-" File search (only works in Git repo)
-map <silent> <Leader>fs :GFiles<CR>
+" File search
+nnoremap <leader>fs <cmd>Telescope find_files<cr>
 
 " Buffers list
-map <silent> <Leader>b :Buffers<CR>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+
+" Recent files
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+
 
 " Kill current buffer
 map <silent> <Leader>kb :Bunlink<CR>
 
 " Project wide search
-nmap <Leader>ps :CtrlSF<SPACE>
-let g:ctrlsf_default_root = 'git'
+nnoremap <leader>ps <cmd>Telescope live_grep<cr>
 
 " ---------- GIT ----------
 
@@ -46,6 +42,9 @@ map <silent> <Leader>gf :GFiles?<CR>
 
 " Git status
 map <silent> <Leader>gs :Git<CR>
+
+" Git branches
+nnoremap <leader>gbr <cmd>Telescope git_branches<cr>
 
 " Select left change/diff (inside :Gvdiffsplit)
 map <silent> <Leader>gdl :diffget //2<CR>
@@ -63,7 +62,7 @@ map <silent> <Leader>gl :Git log<CR>
 map <silent> <Leader>gp :Git push<CR>
 
 " Git blame
-map <silent> <Leader>gb :Gblame<CR>
+map <silent> <Leader>gbl :Git blame<CR>
 
 " ---------- Mix ----------
 
@@ -77,3 +76,14 @@ endfunction
 function s:mix_test()
 	execute '!mix test %:' . line(".")
 endfunction
+
+" ---------- LSP ----------
+
+" Go to definition
+nnoremap <leader>gtd <cmd>lua vim.lsp.buf.definition()<cr>
+
+" Show documentation
+nnoremap <leader>h <cmd>lua vim.lsp.buf.hover()<cr>
+
+" Refactor selected variable/function
+nnoremap <leader>frn <cmd>lua vim.lsp.buf.rename()<cr>

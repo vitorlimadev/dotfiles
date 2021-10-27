@@ -24,7 +24,6 @@ set hidden
 set updatetime=300
 set shortmess+=c
 set splitbelow
-hi Normal guibg=NONE ctermbg=NONE
 
 "---------- Imports ----------
 
