@@ -29,4 +29,9 @@ require'lspconfig'.solargraph.setup{
 	on_attach = on_attach
 }
 
+require'lspconfig'.elixirls.setup{
+	on_attach = on_attach,
+	cmd = { '/home/vitor/elixir/elixir-ls/release/erl23/language_server.sh' }
+}
+
 EOF

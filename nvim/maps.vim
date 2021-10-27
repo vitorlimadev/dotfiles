@@ -16,8 +16,11 @@ nmap <silent> <Right> :vertical resize +2<CR>
 
 " ---------- Files/Buffers ----------
 
-" File tree
+" File explorer
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
+
+" File tree
+nnoremap <silent> <leader>ft :NvimTreeToggle<CR>
 
 " File search
 nnoremap <leader>fs <cmd>Telescope find_files<cr>
