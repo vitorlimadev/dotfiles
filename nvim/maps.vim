@@ -17,10 +17,7 @@ nmap <silent> <Right> :vertical resize +2<CR>
 " ---------- Files/Buffers ----------
 
 " File explorer
-nnoremap <leader>fe <cmd>Telescope file_browser<cr>
-
-" File tree
-nnoremap <silent> <leader>ft :NvimTreeToggle<CR>
+nnoremap <silent> <leader>fe :NvimTreeToggle<CR>
 
 " File search
 nnoremap <leader>fs <cmd>Telescope find_files<cr>
@@ -67,20 +64,9 @@ map <silent> <Leader>gp :Git push<CR>
 " Git blame
 map <silent> <Leader>gbl :Git blame<CR>
 
-" ---------- Mix ----------
-
-nmap <silent> <Leader>mf :call <SID>mix_format()<CR>
-nmap <silent> <Leader>mt :call <SID>mix_test()<CR>
-
-function s:mix_format()
-	execute '!mix format %'
-endfunction
-
-function s:mix_test()
-	execute '!mix test %:' . line(".")
-endfunction
-
 " ---------- LSP ----------
+
+nnoremap <leader>ff <cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>
 
 " Go to definition
 nnoremap <leader>gtd <cmd>lua vim.lsp.buf.definition()<cr>
@@ -89,4 +75,4 @@ nnoremap <leader>gtd <cmd>lua vim.lsp.buf.definition()<cr>
 nnoremap <leader>h <cmd>lua vim.lsp.buf.hover()<cr>
 
 " Refactor selected variable/function
-nnoremap <leader>frn <cmd>lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>lrn <cmd>lua vim.lsp.buf.rename()<cr>
