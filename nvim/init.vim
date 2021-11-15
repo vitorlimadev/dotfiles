@@ -5,8 +5,8 @@ set background=dark
 set autoread
 set number
 set relativenumber
-set scrolloff=15         
-set sidescrolloff=15
+set scrolloff=10
+set sidescrolloff=10
 set sidescroll=1
 set noswapfile
 set notimeout
