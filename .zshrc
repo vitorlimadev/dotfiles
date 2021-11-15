@@ -1,16 +1,3 @@
-# Use powerline
-USE_POWERLINE="false"
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
-# Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
-
-# Custom
-
 # Tmux session templates
 function panda-ws() {
 	cd ~/stone/banking-panda
@@ -94,10 +81,3 @@ alias gb="git blame"
 alias gpull="git pull"
 alias gpush="git push"
 alias docker-suicide="docker-compose down && docker container prune -f && docker volume prune -f && docker network prune -f"
-
-export JAVA_HOME=/usr/lib/jvm/java-11-adoptopenjdk
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
