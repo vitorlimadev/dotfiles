@@ -28,6 +28,9 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 " Recent files
 nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
 
+" Previous/Next buffer
+map <leader>[ :bp<cr>
+map <leader>] :bn<cr>
 
 " Kill current buffer
 map <silent> <Leader>kb :Bunlink<CR>

@@ -1,6 +1,7 @@
 "---------- Personal preferences ----------
 
 syntax enable
+set termguicolors
 set background=dark
 set autoread
 set number
