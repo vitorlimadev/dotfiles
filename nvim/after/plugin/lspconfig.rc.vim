@@ -34,4 +34,9 @@ require'lspconfig'.tsserver.setup{
 	capabilities = capabilities
 }
 
+require'lspconfig'.clojure_lsp.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
 EOF

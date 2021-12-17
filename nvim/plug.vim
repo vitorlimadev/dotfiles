@@ -17,6 +17,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-lua/popup.nvim'
+" Tests
+Plug 'vim-test/vim-test'
 " Elixir specific
 Plug 'elixir-editors/vim-elixir'
 " JS specific
@@ -41,6 +43,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 " Put end after do in Elixir/Ruby
 Plug 'tpope/vim-endwise'
+" Auto-close (,{,[, etc...
+Plug 'jiangmiao/auto-pairs'
+" Statusline
+Plug 'nvim-lualine/lualine.nvim'
+" Firefox embedding
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
 

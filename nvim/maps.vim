@@ -79,3 +79,15 @@ nnoremap <leader>h <cmd>lua vim.lsp.buf.hover()<cr>
 
 " Refactor selected variable/function
 nnoremap <leader>lrn <cmd>lua vim.lsp.buf.rename()<cr>
+
+" Shows diagnostics on a popup
+nnoremap <silent> <leader>ld <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+
+" ---------- Test ----------
+
+" Test whole file
+nmap <silent> <leader>tf :TestFile<CR>
+" Run test in cursor
+nmap <silent> <leader>tt :TestNearest<CR>
+" Run all test suite
+nmap <silent> <leader>ta :TestSuite<CR>
