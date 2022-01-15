@@ -19,22 +19,27 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'.solargraph.setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
 require'lspconfig'.elixirls.setup{
 	cmd = { '/home/viktor/elixir/elixir-ls/release/erl24/language_server.sh' },
 	capabilities = capabilities
 }
 
-require'lspconfig'.tsserver.setup{
+require'lspconfig'.clangd.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
 }
 
 require'lspconfig'.clojure_lsp.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+require'lspconfig'.solargraph.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+require'lspconfig'.tsserver.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
 }

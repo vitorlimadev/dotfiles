@@ -8,8 +8,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
 
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 " Fuzzy finder, ripgrep
@@ -26,8 +26,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" Show buffers as tabs
-Plug 'akinsho/bufferline.nvim'
 " Fixes buffer delete command
 Plug 'orlp/vim-bunlink'
 " Surrond words/sentences in tags
@@ -35,7 +33,6 @@ Plug 'tpope/vim-surround'
 " Comment lines/words
 Plug 'tpope/vim-commentary'
 " Theme
-Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -45,13 +42,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tpope/vim-endwise'
 " Auto-close (,{,[, etc...
 Plug 'jiangmiao/auto-pairs'
-" Statusline
-Plug 'nvim-lualine/lualine.nvim'
-" Firefox embedding
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
 
 colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
-let g:bufferline_show_bufnr = 0
