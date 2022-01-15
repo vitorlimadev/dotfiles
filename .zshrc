@@ -4,53 +4,77 @@ function panda-ws() {
 	tmux new-session -d -s 'panda'
 	tmux rename-window -t 1 'nvim'
 	tmux new-window -t panda:2 -n 'server'
-	tmux attach-session -t panda:1 -c '~/stone/banking-panda' 
+	tmux attach-session -t panda:1
 }
 
-function mind-ws() {
-	cd ~/humanoide/mind-api
-	tmux new-session -d -s 'mind'
+function mind-web-ws() {
+	cd ~/humanoide/mind-web-client
+	tmux new-session -d -s 'mind-web'
 	tmux rename-window -t 1 'nvim'
-	tmux new-window -t mind:2 -n 'server'
-	tmux new-window -t mind:3 -n 'console'
-	tmux attach-session -t mind:1
+	tmux new-window -t mind-web:2 -n 'server'
+	tmux new-window -t mind-web:3 -n 'console'
+	tmux attach-session -t mind-web:1
+}
+
+function mind-api-ws() {
+	cd ~/humanoide/mind-api
+	tmux new-session -d -s 'mind-api'
+	tmux rename-window -t 1 'nvim'
+	tmux new-window -t mind-api:2 -n 'server'
+	tmux new-window -t mind-api:3 -n 'console'
+	tmux attach-session -t mind-api:1
 }
 
 function estudologia-ws() {
 	cd ~/humanoide/estudologia-client
-	tmux new-session -d -s 'estudologia-web'
+	tmux new-session -d -s 'estudologia'
 	tmux rename-window -t 1 'nvim'
-	tmux new-window -t estudologia-web:2 -n 'server'
-	tmux attach-session -t estudologia-web:1
+	tmux new-window -t estudologia:2 -n 'server'
+	tmux new-window -t estudologia:3 -n 'console'
+	tmux attach-session -t estudologia:1
 }
 
-# Generate changelogs
-function gen-changelog() {
-  local currentTag previousTag prevChangelogContents commits
-  lastTag=$(git describe --tags $(git rev-list --tags --max-count=1))
-  commits=$(git log --pretty=format:"- %s" $lastTag...$2)
-
-  {
-    echo "## [$1] $(date +'%Y-%m-%d')";
-    echo "";
-    echo "### Added";
-    echo "";
-    grep "feat:" <<< $commits
-    echo "";
-    echo "### Changed";
-    echo "";
-    grep -v "fix:" <<< $commits | grep -v "feat:"
-    echo "";
-    echo "### Fixed";
-    echo "";
-    grep "fix:" <<< $commits
-  }
-  echo "$prevChangelogContents"
+# Vault login
+vault-login() { 
+  vault login -method=oidc -address="https://vault.shared.stone.credit/" role=azure 
+  vault kv get -address="https://vault.shared.stone.credit/" kv-v2/devs/docker-registry/azure 
 }
 
-function changelog-authors() {
-  lastTag=$(git describe --tags $(git rev-list --tags --max-count=1))
-  git log --pretty=format:'%an' $lastTag..HEAD | sort | uniq
+vault-list-roles() { 
+	vault list aws/roles/
+}
+
+vault-read-aws-credentials() {
+	vault read aws/creds/$1 ttl=12h
+}
+
+# Stone AWS
+aws-eks() { 
+	aws eks --profile $1 --region us-east-1 update-kubeconfig --name $1 --alias $1
+}
+
+aws-get-credentials() {
+	vault-read-aws-credentials $1 > /tmp/aws-credentials
+	echo "[$1]
+	aws_access_key_id=$(cat /tmp/aws-credentials | grep access_key | cut -c 20-)
+	aws_secret_access_key=$(cat /tmp/aws-credentials | grep secret_key | cut -c 20-)
+	aws_session_token=$(cat /tmp/aws-credentials | grep security_token | cut -c 20-)"
+}
+
+aws-set-credentials() {
+	aws-get-credentials k8s-sandbox > ~/.aws/credentials
+	aws-get-credentials k8s-homolog >> ~/.aws/credentials
+}
+
+aws-update-contexts() {
+	aws-eks k8s-sandbox
+	aws-eks k8s-homolog
+}
+
+aws-setup() {
+	vault-login
+	aws-set-credentials
+	aws-update-contexts
 }
 
 # Correctly update submodules
@@ -70,6 +94,7 @@ function gusub() {
 }
 
 . $HOME/.asdf/asdf.sh
+export PATH=~/bin:$PATH
 export KERL_BUILD_DOCS=yes
 
 alias vi="nvim"
