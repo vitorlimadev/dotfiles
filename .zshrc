@@ -1,36 +1,32 @@
+# ZSH specific
+export HISTFILE="~/.zhistory"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+PROMPT=$'%F{white}%~ %B>%f%b '
+
 # Tmux session templates
 function panda-ws() {
 	cd ~/stone/banking-panda
 	tmux new-session -d -s 'panda'
-	tmux rename-window -t 1 'nvim'
-	tmux new-window -t panda:2 -n 'server'
 	tmux attach-session -t panda:1
 }
 
 function mind-web-ws() {
 	cd ~/humanoide/mind-web-client
 	tmux new-session -d -s 'mind-web'
-	tmux rename-window -t 1 'nvim'
-	tmux new-window -t mind-web:2 -n 'server'
-	tmux new-window -t mind-web:3 -n 'console'
 	tmux attach-session -t mind-web:1
 }
 
 function mind-api-ws() {
 	cd ~/humanoide/mind-api
 	tmux new-session -d -s 'mind-api'
-	tmux rename-window -t 1 'nvim'
-	tmux new-window -t mind-api:2 -n 'server'
-	tmux new-window -t mind-api:3 -n 'console'
 	tmux attach-session -t mind-api:1
 }
 
 function estudologia-ws() {
 	cd ~/humanoide/estudologia-client
 	tmux new-session -d -s 'estudologia'
-	tmux rename-window -t 1 'nvim'
-	tmux new-window -t estudologia:2 -n 'server'
-	tmux new-window -t estudologia:3 -n 'console'
 	tmux attach-session -t estudologia:1
 }
 
@@ -96,9 +92,12 @@ function gusub() {
 . $HOME/.asdf/asdf.sh
 export PATH=~/bin:$PATH
 export KERL_BUILD_DOCS=yes
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 alias vi="nvim"
 
+alias g="lazygit"
 alias gs="git status"
 alias gl="git log"
 alias gc="git commit -m "

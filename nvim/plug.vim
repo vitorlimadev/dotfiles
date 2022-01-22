@@ -34,6 +34,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 " Theme
 Plug 'joshdick/onedark.vim'
+" Status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
 " File tree
@@ -46,4 +49,7 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 colorscheme onedark
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='raven'
 hi Normal guibg=NONE ctermbg=NONE
