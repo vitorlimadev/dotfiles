@@ -8,6 +8,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Snippets
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_snipmate").load()
 
 
 local on_attach = function(client, bufnr)
