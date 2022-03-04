@@ -11,3 +11,10 @@ vim.o.hidden = true
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
+vim.g.coc_global_extensions = {
+    "coc-elixir",
+    "coc-eslint",
+    "coc-prettier",
+    "coc-tsserver",
+    "coc-sumneko-lua",
+}
