@@ -17,4 +17,5 @@ vim.g.coc_global_extensions = {
     "coc-prettier",
     "coc-tsserver",
     "coc-sumneko-lua",
+    "coc-snippets"
 }

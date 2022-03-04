@@ -1,7 +1,7 @@
 require('basics')
 require('colors')
 require('telescope-config')
-require('coc-config')
+require('lsp-config')
 require('fugitive-config')
 
 return require('packer').startup(function(use)
@@ -13,7 +13,13 @@ return require('packer').startup(function(use)
   use 'pangloss/vim-javascript'
   use 'mxw/vim-jsx'
   -- LSP Client
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- Snippets
+  use 'honza/vim-snippets'
   -- Theme
   use 'folke/tokyonight.nvim'
   -- Quick comments
