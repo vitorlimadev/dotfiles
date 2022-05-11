@@ -10,11 +10,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_snipmate").load()
 
-
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local opts = { noremap=true, silent=true }

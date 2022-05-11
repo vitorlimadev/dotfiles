@@ -4,28 +4,39 @@ require('telescope-config')
 require('lsp-config')
 require('fugitive-config')
 
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "javascript", "elixir", "ruby" },
+  context_commentstring = {
+    enable = true
+  },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true
+  }
+}
+
 return require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
-  -- Elixir specific
-  use 'elixir-editors/vim-elixir'
-  -- JS/React specific
-  use 'pangloss/vim-javascript'
-  use 'mxw/vim-jsx'
   -- LSP Client
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'nvim-treesitter/nvim-treesitter'
   -- Snippets
   use 'honza/vim-snippets'
   -- Theme
-  use 'folke/tokyonight.nvim'
+  use 'arcticicestudio/nord-vim'
   -- Quick comments
   use 'tpope/vim-commentary'
   -- Git interface
   use 'tpope/vim-fugitive'
+  -- Quickly surround words/selections with tags, "", '' etc...
+  use 'tpope/vim-surround'
   -- Fixes buffer delete to not delete windows
   use 'moll/vim-bbye'
   -- Fuzzy finder
@@ -38,15 +49,8 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     config = function() require'nvim-tree'.setup {} end
   }
-  -- Nice icons
-  use "kyazdani42/nvim-web-devicons"
   -- Automatically close (, { and [
   use 'jiangmiao/auto-pairs'
-  -- Quickly surround words/selections with tags, "", '' etc...
-  use {
-    "blackCauldron7/surround.nvim",
-    config = function()
-      require"surround".setup {mappings_style = "surround"}
-    end
-  }
+  -- Nice icons
+  use "kyazdani42/nvim-web-devicons"
 end)
