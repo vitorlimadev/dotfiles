@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
   -- Snippets
   use 'honza/vim-snippets'
   -- Theme
-  use 'arcticicestudio/nord-vim'
+  use 'morhetz/gruvbox'
   -- Quick comments
   use 'tpope/vim-commentary'
   -- Git interface
