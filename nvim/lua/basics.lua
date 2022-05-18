@@ -19,6 +19,8 @@ vim.o.termguicolors = true
 vim.o.showmode = false
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
+vim.cmd([[let g:neovide_fullscreen=1]])
+vim.cmd([[set guifont=UbuntuMono\ Nerd\ Font\ Mono:h18]])
 
 vim.api.nvim_set_keymap('n', 'vs', ':vs<CR>', { noremap = true, silent = true  })
 vim.api.nvim_set_keymap('n', 'sp', ':sp<CR>', { noremap = true, silent = true  })
