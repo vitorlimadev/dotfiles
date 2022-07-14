@@ -19,7 +19,6 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
@@ -52,14 +51,4 @@ lspconfig.elixirls.setup{
     on_attach = on_attach,
     capabilities,
     cmd = { "/home/vitor/elixir/elixir-ls/erl24/language_server.sh" }
-}
-
-lspconfig.tsserver.setup{
-    capabilities,
-    on_attach = on_attach
-}
-
-lspconfig.tailwindcss.setup{
-    capabilities,
-    on_attach = on_attach
 }
