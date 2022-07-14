@@ -16,7 +16,7 @@ vim.o.shiftwidth = 2
 vim.o.numberwidth = 4
 vim.o.termguicolors = true
 
--- Use gray instead of purple on Popup Menus
+-- Use gray instead of purple on Popup Menus (useless if you use a theme)
 vim.cmd[[highlight Pmenu ctermbg=gray guibg=gray]]
 
 -- Copy and paste from system clipboard

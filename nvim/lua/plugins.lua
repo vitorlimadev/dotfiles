@@ -26,6 +26,8 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'
   -- Fixes buffer deletion to not delete windows
   use 'moll/vim-bbye'
+  -- Theme
+  use 'folke/tokyonight.nvim'
   -- Icons
   use "kyazdani42/nvim-web-devicons"
 end)
