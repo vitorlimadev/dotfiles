@@ -24,6 +24,8 @@ require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   -- Surround words/selections with tags, "", '' etc...
   use 'tpope/vim-surround'
+  -- Puts "end" keyword on functions automatically
+  use 'tpope/vim-endwise'
   -- Fixes buffer deletion to not delete windows
   use 'moll/vim-bbye'
   -- Theme

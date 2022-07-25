@@ -4,6 +4,7 @@ vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.expandtab = true
 vim.o.incsearch = true
+vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.ignorecase = true
 vim.o.hlsearch = false
@@ -36,11 +37,11 @@ vim.api.nvim_set_keymap('n', '<Left>', ':vertical resize -2<CR>', { noremap = tr
 vim.api.nvim_set_keymap('n', '<Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 
 -- Navigate buffers
-vim.api.nvim_set_keymap('n', ',', ':bprev<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '.', ':bnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[', ':bprev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ']', ':bnext<CR>', { noremap = true, silent = true })
 
 -- Replace text
-vim.api.nvim_set_keymap('n', 'S', ':%s//g<Left><Left>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>r', ':%s//g<Left><Left>', { noremap = true })
 
 -- Delete buffer
 vim.api.nvim_set_keymap('n', '<leader>kb', ':Bdelete<CR>', { noremap = true, silent = true })
@@ -53,3 +54,7 @@ vim.g["netrw_banner"] = 0
 vim.g["netrw_liststyle"] = 3
 vim.g["netrw_winsize"] = 25
 
+-- Integrated Terminal specific
+vim.api.nvim_set_keymap('n', '<leader>t', ':term<CR>', { noremap = true, silent = true  }) -- Open terminal
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { noremap = true, silent = true  }) -- Go back to normal mode after using terminal
+vim.cmd[[autocmd TermOpen * setlocal nonumber norelativenumber]] -- No line numbers on terminal
