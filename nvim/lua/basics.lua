@@ -16,9 +16,8 @@ vim.o.errorbells = false
 vim.o.shiftwidth = 2
 vim.o.numberwidth = 4
 vim.o.termguicolors = true
-
--- Use gray instead of purple on Popup Menus (useless if you use a theme)
-vim.cmd[[highlight Pmenu ctermbg=gray guibg=gray]]
+vim.o.lazyredraw = true
+vim.o.updatetime = 100
 
 -- Copy and paste from system clipboard
 vim.api.nvim_set_keymap('v', '<C-y>', '"+y', { noremap = true, silent = true  })
