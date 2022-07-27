@@ -1,23 +1,39 @@
+-- Leader key on Space
 vim.g.mapleader = " "
+
+-- Line numbers related
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.wrap = false
-vim.o.expandtab = true
-vim.o.incsearch = true
+
+-- Text wrapping related
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.textwidth = 100
+
+-- Identation related
 vim.o.smartindent = true
+vim.o.expandtab = true
 vim.o.tabstop = 2
+
+-- Search in file related
+vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.hlsearch = false
-vim.o.swapfile = false
+
+-- Window splits related
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.scrolloff = 10
-vim.o.errorbells = false
-vim.o.shiftwidth = 2
-vim.o.numberwidth = 4
+
+-- Performance/Stability related
 vim.o.termguicolors = true
+vim.o.swapfile = false
 vim.o.lazyredraw = true
 vim.o.updatetime = 100
+
+-- Other preferences
+vim.o.scrolloff = 10
+vim.o.errorbells = false
+vim.o.numberwidth = 4
 
 -- Copy and paste from system clipboard
 vim.api.nvim_set_keymap('v', '<C-y>', '"+y', { noremap = true, silent = true  })
