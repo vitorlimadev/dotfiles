@@ -6,8 +6,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Text wrapping related
-vim.o.wrap = true
-vim.o.linebreak = true
+vim.o.wrap = false -- Setting word wrap to false on all filetypes
+vim.cmd[[autocmd FileType markdown setlocal wrap linebreak]] -- Turning word wrap on again only for markdown files.
 vim.o.textwidth = 100
 
 -- Identation related
