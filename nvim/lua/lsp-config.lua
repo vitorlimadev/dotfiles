@@ -25,12 +25,11 @@ end
 cmp.setup {
   mapping = {
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-j>'] = cmp.mapping.scroll_docs(4),
     ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-    ['<CR>'] = cmp.mapping.confirm {
+    ['<Tab>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
