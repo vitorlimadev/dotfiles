@@ -14,6 +14,7 @@ vim.o.textwidth = 100
 vim.o.smartindent = true
 vim.o.expandtab = true
 vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 
 -- Search in file related
 vim.o.incsearch = true
