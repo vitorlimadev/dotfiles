@@ -32,7 +32,7 @@ vim.o.lazyredraw = true
 vim.o.updatetime = 100
 
 -- Other preferences
-vim.o.scrolloff = 10
+vim.o.scrolloff = 0
 vim.o.errorbells = false
 vim.o.numberwidth = 4
 
@@ -49,12 +49,12 @@ vim.api.nvim_set_keymap('n', '<C-L>', '<C-W><C-L>', { noremap = true, silent = t
 -- Resize splits
 vim.api.nvim_set_keymap('n', '<Up>', ':resize -2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Down>', ':resize +2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Left>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 
 -- Navigate buffers
-vim.api.nvim_set_keymap('n', '[', ':bprev<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ']', ':bnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', ':bprev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', ':bnext<CR>', { noremap = true, silent = true })
 
 -- Replace text
 vim.api.nvim_set_keymap('n', '<leader>r', ':%s//g<Left><Left>', { noremap = true })

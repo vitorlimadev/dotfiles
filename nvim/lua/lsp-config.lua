@@ -43,10 +43,10 @@ cmp.setup {
 lspconfig.elixirls.setup{
     on_attach = on_attach,
     capabilities,
-    cmd = { "/home/vitor/elixir/elixir-ls/erl24/language_server.sh" }
+    cmd = { "/Users/vitor.lima/elixir/elixir-ls/erl24/language_server.sh" }
 }
 
-lspconfig.tsserver.setup{
+lspconfig.jsonls.setup{
     on_attach = on_attach,
     capabilities,
 }
