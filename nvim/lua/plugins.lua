@@ -6,19 +6,21 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter' -- Improves LSP functionalities
   use {
     'hrsh7th/nvim-cmp', -- Autocompletion plugin
-    requires = { {'hrsh7th/cmp-nvim-lsp'} }
+    requires = { { 'hrsh7th/cmp-nvim-lsp' } }
   }
+  use 'j-hui/fidget.nvim' -- Shows LSP progress
   -- Git interface
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
   -- Telescope (File search, search for word occourencies in a project)
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   -- File tree
   use {
     'kyazdani42/nvim-tree.lua',
-    config = function() require'nvim-tree'.setup {} end
+    config = function() require 'nvim-tree'.setup {} end
   }
   -- Comment a selection of text
   use 'tpope/vim-commentary'
@@ -31,5 +33,7 @@ require('packer').startup(function(use)
   -- Theme
   use 'folke/tokyonight.nvim'
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  use 'kyazdani42/nvim-web-devicons'
+  -- Statusline
+  use 'nvim-lualine/lualine.nvim'
 end)
