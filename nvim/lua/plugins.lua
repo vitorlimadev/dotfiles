@@ -3,7 +3,10 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- LSP Client tools
   use 'neovim/nvim-lspconfig' -- LSP Configuration
-  use 'nvim-treesitter/nvim-treesitter' -- Improves LSP functionalities
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    commit = '08cbb2f8b3abbd3e7cb47798f15f59e97ad6a629'
+  } -- Improves LSP functionalities
   use {
     'hrsh7th/nvim-cmp', -- Autocompletion plugin
     requires = { { 'hrsh7th/cmp-nvim-lsp' } }

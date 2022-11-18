@@ -11,7 +11,7 @@ require('fidget').setup {}
 
 local on_attach = function(client, _bufnr)
   -- Format on save
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 

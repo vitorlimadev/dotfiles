@@ -34,7 +34,8 @@ function panda-ws() {
   cd ~/stone/banking-panda
   tmux new-session -d -s 'panda'
 	tmux rename-window -t 1 'nvim'
-	tmux attach-session -t stacks:1 -c '~/stone/banking-panda' 
+	tmux new-window -t panda:2 -n 'tests'
+	tmux attach-session -t panda:1 -c '~/stone/banking-panda' 
 }
 
 export EDITOR='nvim'
