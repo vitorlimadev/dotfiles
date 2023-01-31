@@ -12,10 +12,15 @@ require('packer').startup(function(use)
   -- Git interface
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
-  -- Telescope (File search, search for word occourencies in a project)
+  -- File search, search for word occourencies in a project, file history.
+  -- use {
+  --   'nvim-telescope/telescope.nvim',
+  --   requires = { { 'nvim-lua/plenary.nvim' } }
+  -- }
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    'junegunn/fzf',
+    run = ":call fzf#install()",
+    requires = { { 'junegunn/fzf.vim' } }
   }
   -- File tree
   use {
@@ -36,4 +41,6 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
+  -- Elixir
+  use 'elixir-editors/vim-elixir'
 end)

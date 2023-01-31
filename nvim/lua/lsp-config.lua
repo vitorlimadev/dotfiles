@@ -9,10 +9,10 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Show LSP progress
 require('fidget').setup {}
 
-local on_attach = function(client, _bufnr)
+local on_attach = function(client, _)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
   end
 
   -- Mappings.
@@ -49,6 +49,18 @@ lspconfig.elixirls.setup {
   cmd = { "/Users/vitor.lima/elixir/elixir-ls/erl24/language_server.sh" }
 }
 
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities
+}
+
+lspconfig.sqlls.setup {}
+
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities
+}
+
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities,
@@ -72,9 +84,4 @@ lspconfig.sumneko_lua.setup {
       },
     },
   },
-}
-
-lspconfig.jsonls.setup {
-  on_attach = on_attach,
-  capabilities,
 }
