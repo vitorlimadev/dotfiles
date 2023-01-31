@@ -23,10 +23,7 @@ require('packer').startup(function(use)
     requires = { { 'junegunn/fzf.vim' } }
   }
   -- File tree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    config = function() require 'nvim-tree'.setup {} end
-  }
+  use 'kyazdani42/nvim-tree.lua'
   -- Comment a selection of text
   use 'tpope/vim-commentary'
   -- Surround words/selections with tags, "", '' etc...
