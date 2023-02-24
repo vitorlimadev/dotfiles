@@ -2,7 +2,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="${HOME}/bin:${PATH}"
 
 ZSH_THEME="half-life"
-# FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4"
 
 plugins=(git asdf)
 
