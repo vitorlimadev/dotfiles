@@ -45,18 +45,14 @@ local on_attach = function(client, bufnr)
     return '<Ignore>'
   end, { expr = true })
 
-  -- -- Auto-toggle git blame on line
+  -- -- Git blame on line
   gs.toggle_current_line_blame()
 
   -- -- Actions
-  map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-  map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
-  map('n', '<leader>hS', gs.stage_buffer)
-  map('n', '<leader>hu', gs.reset_hunk)
-  map('n', '<leader>hU', gs.reset_buffer)
-  map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-  map('n', '<leader>tb', gs.toggle_current_line_blame)
-  map('n', '<leader>td', gs.toggle_deleted)
+  map('n', '<leader>hu', gs.reset_hunk) -- Undo selected hunk
+  map('n', '<leader>hU', gs.reset_buffer) -- Undo all hunks from file
+  map('n', '<leader>hb', function() gs.blame_line { full = true } end) -- Git blame hunk
+  map('n', '<leader>hd', gs.toggle_deleted) -- Show deleted lines from hunks
 end
 
 cmp.setup {
