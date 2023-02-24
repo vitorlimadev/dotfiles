@@ -31,6 +31,7 @@ vim.o.lazyredraw = true
 vim.o.updatetime = 100
 
 -- Other preferences
+vim.o.hidden = true
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false
 vim.o.scrolloff = 0
@@ -54,24 +55,11 @@ vim.api.nvim_set_keymap('n', '<Left>', ':vertical resize +2<CR>', { noremap = tr
 vim.api.nvim_set_keymap('n', '<Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 
 -- Navigate buffers
-vim.api.nvim_set_keymap('n', '<leader>h', ':bprev<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>l', ':bnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-h>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-l>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 
 -- Replace text
 vim.api.nvim_set_keymap('n', '<leader>r', ':%s//g<Left><Left>', { noremap = true })
 
 -- Delete buffer
 vim.api.nvim_set_keymap('n', '<leader>kb', ':Bdelete<CR>', { noremap = true, silent = true })
-
--- Open file tree
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
--- File tree config
-vim.g["netrw_banner"] = 0
-vim.g["netrw_liststyle"] = 3
-vim.g["netrw_winsize"] = 25
-
--- Integrated Terminal specific
-vim.api.nvim_set_keymap('n', '<leader>t', ':term<CR>', { noremap = true, silent = true }) -- Open terminal
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { noremap = true, silent = true }) -- Go back to normal mode after using terminal
-vim.cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]] -- No line numbers on terminal
