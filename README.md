@@ -26,5 +26,5 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 Leader key: Space
 
 ## File navigation
-| Open filetree | <leader>e  |
-| File search   | <leader>fs |
+*<leader>e* - Open filetree
+*<leader>fs* - File search
