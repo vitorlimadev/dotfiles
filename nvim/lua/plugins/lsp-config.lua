@@ -88,8 +88,6 @@ lspconfig.clangd.setup {
   capabilities
 }
 
-lspconfig.sqlls.setup {}
-
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities
