@@ -23,6 +23,8 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim' -- Theme
   use 'nvim-tree/nvim-web-devicons' -- Icons
   use 'nvim-lualine/lualine.nvim' -- Statusline
+  use 'goolord/alpha-nvim' -- Dashboard
+  use 'lewis6991/impatient.nvim' -- Improve startup speed
 
   -- Editor actions
   use 'tpope/vim-commentary' -- Comment a selection of text
