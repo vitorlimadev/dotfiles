@@ -9,14 +9,26 @@ require('packer').startup(function(use)
     requires = { { 'hrsh7th/cmp-nvim-lsp' } }
   }
   use 'j-hui/fidget.nvim' -- Shows LSP progress
+  use {
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = { "SmiteshP/nvim-navic" }
+  }
   -- Git interface
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
+  use {
+    'pwntester/octo.nvim', -- Github tools
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function()
+      require "octo".setup()
+    end
+  }
   -- File search, search for word occourencies in a project, file history.
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   requires = { { 'nvim-lua/plenary.nvim' } }
-  -- }
   use {
     'junegunn/fzf',
     run = ":call fzf#install()",
@@ -35,7 +47,7 @@ require('packer').startup(function(use)
   -- Theme
   use 'folke/tokyonight.nvim'
   -- Icons
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
   -- Elixir

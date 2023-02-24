@@ -1,4 +1,33 @@
 {
     "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.workspace.library": [
+        "/Users/vitor.lima/.config/nvim",
+        "/Users/vitor.lima/.local/share/nvim/site",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/fzf",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/fzf.vim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-navic",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-bbye",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-commentary",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-elixir",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-endwise",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/vim-surround",
+        "/opt/homebrew/Cellar/neovim/0.8.1/share/nvim/runtime",
+        "/opt/homebrew/Cellar/neovim/0.8.1/lib/nvim",
+        "/Users/vitor.lima/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
+        "${3rd}/luassert/library"
+    ]
 }

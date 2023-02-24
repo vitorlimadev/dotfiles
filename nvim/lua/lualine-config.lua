@@ -1,1 +1,5 @@
-require('lualine').setup { theme = 'tokyonight' }
+require('lualine').setup {
+  options = {
+    theme = 'iceberg_dark'
+  }
+}

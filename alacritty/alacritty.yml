@@ -3,13 +3,11 @@
 font:
   size: 16
   normal:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font Mono
     style: Regular
   bold:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font Mono
     style: Bold
-  italic:
-    family: Hasklug Nerd Font
-    style: Italic
+
 keybindinds:
   - { key: N,  mods: Command, action: SpawnNewInstance }

@@ -9,10 +9,21 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Show LSP progress
 require('fidget').setup {}
 
-local on_attach = function(client, _)
+-- Winbar
+require('barbecue').setup {}
+
+-- Window top bar
+local navic = require('nvim-navic')
+navic.setup {}
+
+local on_attach = function(client, bufnr)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+  end
+
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
   end
 
   -- Mappings.
