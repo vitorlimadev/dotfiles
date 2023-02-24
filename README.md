@@ -25,8 +25,4 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 Leader key: Space
 
-## File navigation
-
-** <leader>e ** - Open filetree
-
-** <leader>fs ** - File search
+## TODO: Add keybinds
