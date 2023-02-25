@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="${HOME}/bin:${PATH}"
 
-ZSH_THEME="half-life"
+ZSH_THEME="jaischeema"
 
 plugins=(git asdf)
 
