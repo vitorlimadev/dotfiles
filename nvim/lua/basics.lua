@@ -24,6 +24,7 @@ vim.o.hlsearch = false
 -- Window splits related
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.previewheight = 20
 
 -- Performance/Stability related
 vim.o.swapfile = false

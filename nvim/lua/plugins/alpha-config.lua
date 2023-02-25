@@ -4,7 +4,7 @@ local dashboard = require("alpha.themes.dashboard")
 dashboard.section.buttons.val = {
   dashboard.button("e", "  > New buffer", ":ene <BAR> startinsert <CR>"),
   dashboard.button("<leader>e", "  > File tree", ":NvimTreeToggle<CR>"),
-  dashboard.button("<leader>fs", "  > Find file", ":Files<CR>"),
+  dashboard.button("<leader>fs", "  > Find file", ":GFiles<CR>"),
   dashboard.button("<leader>ps", "  > Find word", ":Rg<CR>"),
   dashboard.button("q", "  > Quit", ":qa<CR>"),
 }

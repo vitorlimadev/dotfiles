@@ -10,14 +10,19 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim' -- Git utilities
   use 'kyazdani42/nvim-tree.lua' -- File tree
   use 'lukas-reineke/indent-blankline.nvim' -- Show identation as lines
-  use { 'akinsho/bufferline.nvim', tag = "v3.*" } -- Buffers as tabs on top of the editor
+  use { 'akinsho/bufferline.nvim', tag = 'v3.*' } -- Buffers as tabs on top of the editor
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' } } } -- Autocompletion plugin
   use { 'akinsho/toggleterm.nvim', tag = '*' } -- Persistent terminal (<C-d> to exit without persist)
   use {
     'junegunn/fzf',
     requires = { { 'junegunn/fzf.vim' } },
-    run = ":call fzf#install()"
+    run = ':call fzf#install()'
   } -- File search, search for word occourencies in a project, file history.
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    ft = { 'markdown' }
+  } -- Markdown preview tool
 
   -- Editor assets
   use 'folke/tokyonight.nvim' -- Theme
@@ -29,9 +34,9 @@ require('packer').startup(function(use)
   -- Editor actions
   use 'tpope/vim-commentary' -- Comment a selection of text
   use 'tpope/vim-surround' -- Surround words/selections with tags, "", '' etc...
-  use 'windwp/nvim-autopairs' -- Autoclose pairs of ", (, {, [, etc...
+  use 'windwp/nvim-autopairs' -- Autoclose pairs of ', ", (, {, [, etc...
   use 'RRethy/vim-illuminate' -- Highlight exact same words on buffer
-  use 'tpope/vim-endwise' -- Puts "end" keyword on functions automatically
+  use 'tpope/vim-endwise' -- Puts 'end' keyword on functions automatically
   use 'moll/vim-bbye' -- Fixes buffer deletion to not delete windows
 
   -- Language specific
