@@ -23,6 +23,15 @@ require('packer').startup(function(use)
     run = 'cd app && npm install',
     ft = { 'markdown' }
   } -- Markdown preview tool
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "jfpedroza/neotest-elixir",
+    }
+  } -- Testing tools
 
   -- Editor assets
   use 'folke/tokyonight.nvim' -- Theme
