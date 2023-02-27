@@ -1,5 +1,8 @@
-# window:
-#   opacity: 0.93
+window:
+  # opacity: 0.95
+  dimensions:
+    columns: 133
+    lines: 40
 font:
   size: 16
   normal:
