@@ -14,11 +14,6 @@ require('packer').startup(function(use)
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' } } } -- Autocompletion plugin
   use { 'akinsho/toggleterm.nvim', tag = '*' } -- Persistent terminal (<C-d> to exit without persist)
   use {
-    'junegunn/fzf',
-    requires = { { 'junegunn/fzf.vim' } },
-    run = ':call fzf#install()'
-  } -- File search, search for word occourencies in a project, file history.
-  use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
     ft = { 'markdown' }
@@ -38,8 +33,11 @@ require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons' -- Icons
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'lewis6991/impatient.nvim' -- Improve startup speed
+  use 'nvim-lua/plenary.nvim' -- Required by other plugins
 
   -- Editor actions
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', } -- File search, search for word occourencies in a project, file history.
+  use 'nvim-pack/nvim-spectre' -- Search and replace on project
   use 'tpope/vim-commentary' -- Comment a selection of text
   use 'tpope/vim-surround' -- Surround words/selections with tags, "", '' etc...
   use 'windwp/nvim-autopairs' -- Autoclose pairs of ', ", (, {, [, etc...
