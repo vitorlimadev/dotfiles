@@ -80,11 +80,6 @@ lspconfig.elixirls.setup {
   cmd = { "/Users/vitor.lima/elixir/elixir-ls/erl24/language_server.sh" }
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities
-}
-
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities

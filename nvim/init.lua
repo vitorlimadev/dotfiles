@@ -4,7 +4,6 @@ require('packer-config')
 
 -- Plugin configs
 require('plugins.theme')
-require('plugins.alpha-config')
 require('plugins.lsp-config')
 require('plugins.treesitter-config')
 require('plugins.fzf-config')
