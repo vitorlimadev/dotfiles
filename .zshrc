@@ -3,7 +3,7 @@ export PATH="${HOME}/bin:${PATH}"
 
 ZSH_THEME="jaischeema"
 
-plugins=(git asdf)
+plugins=(git asdf zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -14,3 +14,5 @@ alias gs="git status"
 alias gl="git log"
 alias gcp="git cherry-pick"
 alias run_tests="./scripts/run_tests.sh"
+
+bindkey -v

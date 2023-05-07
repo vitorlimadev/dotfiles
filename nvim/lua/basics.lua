@@ -35,7 +35,7 @@ vim.o.updatetime = 100
 vim.o.hidden = true
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false
-vim.o.scrolloff = 0
+vim.o.scrolloff = 10
 vim.o.errorbells = false
 vim.o.numberwidth = 4
 
