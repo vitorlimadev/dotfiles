@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap('t', '<C-d>', '<C-\\><C-n>', { noremap = true, silent = 
 -- Test project
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>tf',
+  '<leader>tp',
   ':TermExec cmd="run_tests" dir="."<CR>',
   { noremap = true, silent = true }
 )
