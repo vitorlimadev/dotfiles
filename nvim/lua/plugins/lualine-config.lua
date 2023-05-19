@@ -1,6 +1,6 @@
 require('lualine').setup {
   options = {
-    theme = 'nightfly',
+    theme = 'iceberg_dark',
     globalstatus = true,
   },
   sections = {

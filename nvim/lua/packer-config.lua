@@ -20,7 +20,8 @@ require('packer').startup(function(use)
   } -- Markdown preview tool
 
   -- Editor assets
-  use 'folke/tokyonight.nvim' -- Theme
+  -- use 'folke/tokyonight.nvim' -- Theme
+  use 'rebelot/kanagawa.nvim' -- Theme
   use 'nvim-tree/nvim-web-devicons' -- Icons
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'lewis6991/impatient.nvim' -- Improve startup speed
