@@ -45,3 +45,22 @@ function TestWithLineNumber()
     )
   )
 end
+
+-- Send selection to terminal (changes ' to " for compatibility)
+vim.api.nvim_set_keymap(
+  'v',
+  '<leader>ti',
+  ':lua SendVLSelectToTerminal()<CR>',
+  { noremap = true, silent = true }
+)
+
+function SendVLSelectToTerminal()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+
+  local selected_text = vim.fn.getline(start_line, end_line)
+
+  for _, text in ipairs(selected_text) do
+    vim.cmd(":TermExec cmd='" .. text:gsub("'", '"') .. "'")
+  end
+end
