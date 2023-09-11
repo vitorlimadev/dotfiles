@@ -4,7 +4,6 @@ require('packer').startup(function(use)
 
   -- Editor tools
   use 'neovim/nvim-lspconfig' -- LSP Configuration
-  use 'elixir-tools/elixir-tools.nvim' -- Experimental Elixir LSP
   use 'nvim-treesitter/nvim-treesitter' -- Improves LSP functionalities
   use 'j-hui/fidget.nvim' -- Shows LSP progress
   use 'tpope/vim-fugitive' -- Git interface

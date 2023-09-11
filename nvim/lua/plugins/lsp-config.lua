@@ -80,12 +80,6 @@ lspconfig.elixirls.setup {
   cmd = { "/Users/vitor.lima/elixir/elixir-ls/erl25/language_server.sh" }
 }
 
--- require("elixir").setup({
---   nextls = { enable = true, on_attach = on_attach },
---   credo = { enable = false },
---   elixirls = { enable = false },
--- })
-
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities
