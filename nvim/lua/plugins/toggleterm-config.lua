@@ -40,7 +40,8 @@ function TestWithLineNumber()
 
   vim.cmd(
     string.format(
-      ':TermExec cmd="run_tests mix test %%:%d" dir="."<CR>',
+      ':TermExec cmd="run_tests mix test %s:%d" dir="."<CR>',
+      vim.fn.expand('%:p'),
       line_number
     )
   )
