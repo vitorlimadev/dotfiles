@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   'n',
   '<leader>tf',
-  ':TermExec cmd="run_tests mix test %" dir="."<CR>',
+  ':TermExec cmd="mix test %" dir="."<CR>',
   { noremap = true, silent = true }
 )
 
