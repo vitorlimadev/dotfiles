@@ -1,6 +1,6 @@
 require('lualine').setup {
   options = {
-    theme = 'iceberg_dark',
+    theme = 'auto',
     globalstatus = true,
   },
   sections = {
