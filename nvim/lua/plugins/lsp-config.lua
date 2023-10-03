@@ -6,9 +6,6 @@ local cmp = require('cmp')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
--- Show LSP progress
-require('fidget').setup {}
-
 local on_attach = function(client, bufnr)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
@@ -50,10 +47,10 @@ local on_attach = function(client, bufnr)
   gs.toggle_current_line_blame()
 
   -- -- Actions
-  map('n', '<leader>hu', gs.reset_hunk) -- Undo selected hunk
-  map('n', '<leader>hU', gs.reset_buffer) -- Undo all hunks from file
+  map('n', '<leader>hu', gs.reset_hunk)                                -- Undo selected hunk
+  map('n', '<leader>hU', gs.reset_buffer)                              -- Undo all hunks from file
   map('n', '<leader>hb', function() gs.blame_line { full = true } end) -- Git blame hunk
-  map('n', '<leader>hd', gs.toggle_deleted) -- Show deleted lines from hunks
+  map('n', '<leader>hd', gs.toggle_deleted)                            -- Show deleted lines from hunks
 end
 
 cmp.setup {

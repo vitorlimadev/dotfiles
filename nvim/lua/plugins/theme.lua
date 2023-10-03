@@ -1,12 +1,8 @@
--- require('tokyonight').setup({
---   style = "night",
---   -- transparent = true,
---   -- transparent_sidebar = true,
---   -- styles = {
---   --   sidebars = "transparent"
---   -- }
--- })
--- vim.o.termguicolors = true
+require('rose-pine').setup({
+  variant = 'main'
+})
 
 vim.opt.background = "dark"
-vim.cmd [[colorscheme kanagawa]]
+
+-- vim.cmd('colorscheme kanagawa')
+vim.cmd('colorscheme rose-pine')
