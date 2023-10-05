@@ -1,5 +1,6 @@
 -- Vim / Packer config
-require('basics')
+require('settings')
+require('remaps')
 require('packer-config')
 
 -- Plugin configs
@@ -9,7 +10,6 @@ require('plugins.treesitter-config')
 require('plugins.telescope-config')
 require('plugins.spectre-config')
 require('plugins.fugitive-config')
-require('plugins.nvim-tree-config')
 require('plugins.lualine-config')
 require('plugins.toggleterm-config')
 require('plugins.markdown-preview-config')

@@ -17,3 +17,4 @@ alias gcp="git cherry-pick"
 alias run_tests="./scripts/run_tests.sh"
 
 bindkey -v
+export PATH=$PATH:/Users/vitor.lima/.spicetify
