@@ -9,7 +9,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'                                         -- Git utilities
   use 'lukas-reineke/indent-blankline.nvim'                             -- Show identation as lines
   use 'folke/zen-mode.nvim'                                             -- Distraction-free mode
-  use { 'akinsho/bufferline.nvim', tag = 'v3.*' }                       -- Buffers as tabs on top of the editor
+  use { 'akinsho/bufferline.nvim', tag = '*' }                          -- Buffers as tabs on top of the editor
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' } } } -- Autocompletion plugin
   use { 'akinsho/toggleterm.nvim', tag = '*' }                          -- Persistent terminal (<C-d> to exit without persist)
   use {

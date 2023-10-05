@@ -1,6 +1,10 @@
 -- Leader key on Space
 vim.g.mapleader = " "
 
+-- File Tree
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+
 -- Line numbers related
 vim.o.number = true
 vim.o.relativenumber = true
