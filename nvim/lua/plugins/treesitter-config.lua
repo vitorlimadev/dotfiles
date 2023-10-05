@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "elixir", "json", "rust", "lua" },
+  ensure_installed = { "elixir", "json", "lua" },
   context_commentstring = {
     enable = true
   },

@@ -8,8 +8,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-fugitive'                                              -- Git interface
   use 'lewis6991/gitsigns.nvim'                                         -- Git utilities
   use 'lukas-reineke/indent-blankline.nvim'                             -- Show identation as lines
-  use 'folke/zen-mode.nvim'                                             -- Distraction-free mode
-  use { 'akinsho/bufferline.nvim', tag = '*' }                          -- Buffers as tabs on top of the editor
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' } } } -- Autocompletion plugin
   use { 'akinsho/toggleterm.nvim', tag = '*' }                          -- Persistent terminal (<C-d> to exit without persist)
   use {
@@ -21,9 +19,6 @@ require('packer').startup(function(use)
   -- Editor assets
   use 'rebelot/kanagawa.nvim'                  -- Theme
   use { 'rose-pine/neovim', as = 'rose-pine' } -- Theme
-  use 'nvim-tree/nvim-web-devicons'            -- Icons
-  use 'nvim-lualine/lualine.nvim'              -- Statusline
-  use 'lewis6991/impatient.nvim'               -- Improve startup speed
   use 'nvim-lua/plenary.nvim'                  -- Required by other plugins
 
   -- Editor actions

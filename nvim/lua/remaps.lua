@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<leader>kb', ':Bdelete<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>kf', ':Delete<CR>', { noremap = true, silent = true })
 
 -- [ K ]ill [ D ]irectory where buffer is located
-vim.api.nvim_set_keymap('n', '<leader>kd', ':!rm -rf %:h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>kd', ':!rm -rf %:h<CR> :Bdelete', { noremap = true, silent = true })
 
 ------------------------------------
 ------ Non mneumonical remaps ------
