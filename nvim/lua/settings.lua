@@ -38,7 +38,8 @@ vim.o.lazyredraw = true
 vim.o.updatetime = 100
 
 -- Other preferences
-vim.loader.enable()
+vim.loader.enable()  -- Improves startup time
+vim.o.laststatus = 3 -- One statusline for all windows
 vim.o.hidden = true
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false
