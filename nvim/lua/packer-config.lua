@@ -4,6 +4,7 @@ require('packer').startup(function(use)
 
   -- Editor tools
   use 'neovim/nvim-lspconfig'                                           -- LSP Configuration
+  use 'kyazdani42/nvim-tree.lua'                                        -- File tree
   use 'nvim-treesitter/nvim-treesitter'                                 -- Improves LSP functionalities
   use 'tpope/vim-fugitive'                                              -- Git interface
   use 'lewis6991/gitsigns.nvim'                                         -- Git utilities
@@ -20,6 +21,7 @@ require('packer').startup(function(use)
   use 'rebelot/kanagawa.nvim'                  -- Theme
   use { 'rose-pine/neovim', as = 'rose-pine' } -- Theme
   use 'nvim-lua/plenary.nvim'                  -- Required by other plugins
+  use 'nvim-tree/nvim-web-devicons'            -- Icons
 
   -- Editor actions
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', } -- File search, search for word occourencies in a project, file history.

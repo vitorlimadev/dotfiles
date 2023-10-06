@@ -6,6 +6,7 @@ require('packer-config')
 -- Plugin configs
 require('plugins.theme')
 require('plugins.lsp-config')
+require('plugins.nvim-tree-config')
 require('plugins.treesitter-config')
 require('plugins.telescope-config')
 require('plugins.spectre-config')

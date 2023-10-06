@@ -2,9 +2,6 @@
 -------- Mneumonical remaps --------
 ------------------------------------
 
--- File [ E ]xplorer
-vim.api.nvim_set_keymap('n', '<leader>e', ':Explore<CR>', { noremap = true, silent = true })
-
 -- [ F ]ile [ R ]ename
 vim.api.nvim_set_keymap('n', '<leader>fe', ':Explore<CR>', { noremap = true, silent = true })
 
@@ -15,10 +12,10 @@ vim.api.nvim_set_keymap('n', '<leader>tr', ':%s//g<Left><Left>', { noremap = tru
 vim.api.nvim_set_keymap('n', '<leader>kb', ':Bdelete<CR>', { noremap = true, silent = true })
 
 -- [ K ]ill [ F ]ile and buffer
-vim.api.nvim_set_keymap('n', '<leader>kf', ':Delete<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>kf', ':Delete<CR>', { noremap = true, silent = true })
 
 -- [ K ]ill [ D ]irectory where buffer is located
-vim.api.nvim_set_keymap('n', '<leader>kd', ':!rm -rf %:h<CR> :Bdelete', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>kd', ':!rm -rf %:h<CR> :Bdelete', { noremap = true, silent = true })
 
 ------------------------------------
 ------ Non mneumonical remaps ------
