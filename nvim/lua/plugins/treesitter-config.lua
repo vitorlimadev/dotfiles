@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "elixir", "json", "lua" },
+  ensure_installed = { "elixir", "heex", "surface", "json", "lua" },
   context_commentstring = {
     enable = true
   },
@@ -7,6 +7,9 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
   },
   indent = {
+    enable = true
+  },
+  playground = {
     enable = true
   }
 }

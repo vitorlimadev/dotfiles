@@ -24,7 +24,7 @@ require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'            -- Icons
 
   -- Editor actions
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', } -- File search, search for word occourencies in a project, file history.
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.4', } -- File search, search for word occourencies in a project, file history.
   use 'nvim-pack/nvim-spectre'                            -- Search and replace on project
   use 'tpope/vim-commentary'                              -- Comment a selection of text
   use 'tpope/vim-surround'                                -- Surround words/selections with tags, "", '' etc...
@@ -33,7 +33,13 @@ require('packer').startup(function(use)
   use 'tpope/vim-endwise'                                 -- Puts 'end' keyword on functions automatically
   use 'moll/vim-bbye'                                     -- Fixes buffer deletion to not delete windows
   use 'tpope/vim-eunuch'                                  -- Unix commands helper
+  use {
+    'laytan/tailwind-sorter.nvim',
+    run = 'cd formatter && npm i && npm run build',
+  } -- Sorts TailwindCSS classes
 
   -- Language specific
   use 'elixir-editors/vim-elixir' -- Elixir
+
+  use 'nvim-treesitter/playground'
 end)

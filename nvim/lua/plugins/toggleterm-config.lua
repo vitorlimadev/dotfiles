@@ -2,10 +2,10 @@ local toggleterm = require("toggleterm")
 
 toggleterm.setup({
   open_mapping = [[<C-\>]], -- Same to hide and persist session
-  direction = 'horizontal',
-  -- float_opts = {
-  --   border = 'curved'
-  -- }
+  direction = 'float',
+  float_opts = {
+    border = 'curved'
+  }
 })
 
 -- Remap exit terminal mode hotkey

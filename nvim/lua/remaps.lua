@@ -11,19 +11,16 @@ vim.api.nvim_set_keymap('n', '<leader>tr', ':%s//g<Left><Left>', { noremap = tru
 -- [ K ]ill [ B ]uffer
 vim.api.nvim_set_keymap('n', '<leader>kb', ':Bdelete<CR>', { noremap = true, silent = true })
 
--- [ K ]ill [ F ]ile and buffer
--- vim.api.nvim_set_keymap('n', '<leader>kf', ':Delete<CR>', { noremap = true, silent = true })
-
--- [ K ]ill [ D ]irectory where buffer is located
--- vim.api.nvim_set_keymap('n', '<leader>kd', ':!rm -rf %:h<CR> :Bdelete', { noremap = true, silent = true })
+-- [ R ]un current [ L ]ua file
+vim.api.nvim_set_keymap('n', '<leader>rl', ':luafile %<CR>', { noremap = true, silent = true })
 
 ------------------------------------
 ------ Non mneumonical remaps ------
 ------------------------------------
 
 -- Copy and paste from system clipboard
-vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-v>', '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-y>', '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-p>', '"+p', { noremap = true, silent = true })
 
 -- Navigate splits more easily
 vim.api.nvim_set_keymap('n', '<C-H>', '<C-W><C-H>', { noremap = true, silent = true })
