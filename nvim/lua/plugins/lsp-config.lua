@@ -9,6 +9,10 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local on_attach = function(client, bufnr)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
+    if vim.bo.filetype == "elixir" then
+      vim.cmd("autocmd BufWritePre <buffer> :TailwindSort")
+    end
+
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
   end
 

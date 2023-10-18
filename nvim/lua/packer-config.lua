@@ -33,10 +33,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-endwise'                                 -- Puts 'end' keyword on functions automatically
   use 'moll/vim-bbye'                                     -- Fixes buffer deletion to not delete windows
   use 'tpope/vim-eunuch'                                  -- Unix commands helper
-  use {
-    'laytan/tailwind-sorter.nvim',
-    run = 'cd formatter && npm i && npm run build',
-  } -- Sorts TailwindCSS classes
+  use '~/elixir/tailwind-sorter.nvim'                     -- Sorts TailwindCSS classes
 
   -- Language specific
   use 'elixir-editors/vim-elixir' -- Elixir
