@@ -78,31 +78,10 @@ cmp.setup {
 lspconfig.elixirls.setup {
   on_attach = on_attach,
   capabilities,
-  cmd = { "/Users/vitor.lima/elixir/elixir-ls/erl25/language_server.sh" }
+  cmd = { "/home/victor/elixir/elixir-ls/erl25/language_server.sh" }
 }
 
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities
-}
-
-lspconfig.lua_ls.setup {
-  on_attach = on_attach,
-  capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
 }
