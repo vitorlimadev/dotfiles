@@ -4,11 +4,13 @@ export KERL_BUILD_DOCS=yes
 
 ZSH_THEME="jaischeema"
 
-plugins=(git asdf mix zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git asdf mix)
 
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
+
+alias t="tmux"
 
 alias vi="nvim"
 alias gs="git status"
@@ -17,3 +19,7 @@ alias gcp="git cherry-pick"
 alias gr="git rebase"
 
 bindkey -v
+source /home/victor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/victor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/victor/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

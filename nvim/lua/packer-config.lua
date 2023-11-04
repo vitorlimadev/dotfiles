@@ -11,6 +11,7 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'                             -- Show identation as lines
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' } } } -- Autocompletion plugin
   use { 'akinsho/toggleterm.nvim', tag = '*' }                          -- Persistent terminal (<C-d> to exit without persist)
+  use 'nvim-lualine/lualine.nvim'                                       -- Statusline
   use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
