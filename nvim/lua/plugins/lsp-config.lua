@@ -9,9 +9,9 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local on_attach = function(client, bufnr)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
-    if vim.bo.filetype == "elixir" then
-      vim.cmd("autocmd BufWritePre <buffer> :TailwindSort")
-    end
+    -- if vim.bo.filetype == "elixir" then
+    --   vim.cmd("autocmd BufWritePre <buffer> :TailwindSort")
+    -- end
 
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
   end
@@ -78,7 +78,7 @@ cmp.setup {
 lspconfig.elixirls.setup {
   on_attach = on_attach,
   capabilities,
-  cmd = { "/home/victor/elixir/elixir-ls/erl25/language_server.sh" }
+  cmd = { "/home/victor/data/elixir/elixir-ls/erl24/language_server.sh" }
 }
 
 lspconfig.jsonls.setup {
