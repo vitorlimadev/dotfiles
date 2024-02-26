@@ -1,4 +1,12 @@
-local lspconfig = require('lspconfig')
+-- LSP client installer
+local lsp_clients = {
+  'lua_ls',
+  'elixirls',
+  'jsonls'
+}
+
+require('mason').setup()
+require('mason-lspconfig').setup({ ensure_installed = lsp_clients })
 
 -- Autocompletion
 local cmp = require('cmp')
@@ -6,14 +14,13 @@ local cmp = require('cmp')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+-- Git Signs
+require('gitsigns').setup()
+
 local on_attach = function(client, bufnr)
   -- Format on save
   if client.server_capabilities.documentFormattingProvider then
-    -- if vim.bo.filetype == "elixir" then
-    --   vim.cmd("autocmd BufWritePre <buffer> :TailwindSort")
-    -- end
-
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
   end
 
   -- Mappings.
@@ -34,13 +41,14 @@ local on_attach = function(client, bufnr)
     vim.keymap.set(mode, l, r, opt)
   end
 
-  -- -- Navigation
+  -- -- Next Hunk Navigation
   map('n', ']c', function()
     if vim.wo.diff then return ']c' end
     vim.schedule(function() gs.next_hunk() end)
     return '<Ignore>'
   end, { expr = true })
 
+  -- -- Previous Hunk Navigation
   map('n', '[c', function()
     if vim.wo.diff then return '[c' end
     vim.schedule(function() gs.prev_hunk() end)
@@ -51,11 +59,12 @@ local on_attach = function(client, bufnr)
   gs.toggle_current_line_blame()
 
   -- -- Actions
-  map('n', '<leader>hu', gs.reset_hunk)                                -- Undo selected hunk
-  map('n', '<leader>hU', gs.reset_buffer)                              -- Undo all hunks from file
-  map('n', '<leader>hb', function() gs.blame_line { full = true } end) -- Git blame hunk
-  map('n', '<leader>hd', gs.toggle_deleted)                            -- Show deleted lines from hunks
+  map('n', '<leader>hu', gs.reset_hunk)
+  map('n', '<leader>hU', gs.reset_buffer)
+  map('n', '<leader>hb', function() gs.blame_line { full = true } end)
+  map('n', '<leader>hd', gs.toggle_deleted)
 end
+
 
 cmp.setup {
   mapping = {
@@ -74,14 +83,11 @@ cmp.setup {
   },
 }
 
--- Servers
-lspconfig.elixirls.setup {
-  on_attach = on_attach,
-  capabilities,
-  cmd = { "/home/victor/data/elixir/elixir-ls/erl24/language_server.sh" }
-}
-
-lspconfig.jsonls.setup {
-  on_attach = on_attach,
-  capabilities
+require('mason-lspconfig').setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
+      on_attach = on_attach,
+      capabilities
+    }
+  end
 }

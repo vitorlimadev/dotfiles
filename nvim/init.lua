@@ -1,7 +1,7 @@
--- Vim / Packer config
+-- Vim / lazy.nvim config
 require('settings')
 require('remaps')
-require('packer-config')
+require('lazy-config')
 
 -- Plugin configs
 require('plugins.theme')

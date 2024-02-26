@@ -1,16 +1,5 @@
 vim.opt.background = "dark"
 
--- Rose pine --
-
--- require('rose-pine').setup({
---   variant = 'moon',
---   dim_nc_background = false,
---   disable_background = true,
---   disable_float_background = true
--- })
-
--- vim.cmd('colorscheme rose-pine')
-
 -- Kanagawa --
 -- Remeber to run :KanagawaCompile after changes.
 require('kanagawa').setup({
