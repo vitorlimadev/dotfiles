@@ -4,6 +4,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:$PATH"
 export KERL_BUILD_DOCS=yes
 export BTC_PAY_API_KEY="0013cb97b9ff3ed6b6623052577bbd54eabcd180"
+export BTC_PAY_WEBHOOK_SECRET="4TdT1SEFmNbN9BiptpRwiwjdQCfX"
 
 ZSH_THEME="jaischeema"
 
