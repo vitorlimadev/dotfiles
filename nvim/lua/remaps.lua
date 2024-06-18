@@ -1,8 +1,11 @@
+-- Leader key on Space
+vim.g.mapleader = " "
+
 ------------------------------------
 -------- Mneumonical remaps --------
 ------------------------------------
 
--- [ F ]ile [ R ]ename
+-- [ F ]ile [ E ]explore
 vim.api.nvim_set_keymap('n', '<leader>fe', ':Explore<CR>', { noremap = true, silent = true })
 
 -- [ T ]ext [ R ]eplace
