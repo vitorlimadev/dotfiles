@@ -54,7 +54,8 @@ require("lazy").setup({
   -- { 'tpope/vim-endwise',                  lazy = false },
   { 'moll/vim-bbye' },
   -- Language specific
-  { 'elixir-editors/vim-elixir' }
+  { 'elixir-editors/vim-elixir' },
+  { 'amadeus/vim-mjml' }
 })
 
 
