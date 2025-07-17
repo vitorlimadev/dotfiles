@@ -1,10 +1,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
+  vim.fn.system({ "git", "clone", "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable", -- latest stable release
     lazypath,
@@ -32,6 +29,7 @@ require("lazy").setup({
   { 'kyazdani42/nvim-tree.lua',       lazy = false }, -- File tree
   { 'tpope/vim-fugitive' },                           -- Git interface
   { 'lewis6991/gitsigns.nvim' },                      -- Git utilities
+  { 'akinsho/bufferline.nvim' },                      -- Bufferline
   {
     'akinsho/git-conflict.nvim',
     version = "*",
@@ -51,7 +49,6 @@ require("lazy").setup({
   { 'tpope/vim-surround' },
   { 'windwp/nvim-autopairs' },
   { 'RRethy/vim-illuminate' }, -- Highlight exact same words on buffer
-  -- { 'tpope/vim-endwise',                  lazy = false },
   { 'moll/vim-bbye' },
   -- Language specific
   { 'elixir-editors/vim-elixir' },

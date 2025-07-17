@@ -1,7 +1,6 @@
--- LSP client installer
+-- Mason Ones
 local lsp_clients = {
   'lua_ls',
-  'elixirls',
   'jsonls'
 }
 
@@ -65,7 +64,6 @@ local on_attach = function(client, bufnr)
   map('n', '<leader>hd', gs.toggle_deleted)
 end
 
-
 cmp.setup {
   mapping = {
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -83,11 +81,20 @@ cmp.setup {
   },
 }
 
-require('mason-lspconfig').setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      on_attach = on_attach,
-      capabilities
-    }
-  end
-}
+vim.lsp.config('elixirls', {
+  cmd = { "/home/victor/elixir/elixir-ls/stable/language_server.sh" },
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.config('lua_ls', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.config('jsonls', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.enable({ 'elixirls', 'lua_ls', 'jsonls' })

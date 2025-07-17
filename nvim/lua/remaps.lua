@@ -22,6 +22,10 @@ vim.api.nvim_set_keymap('n', '<leader>rl', ':luafile %<CR>', { noremap = true, s
 ------------------------------------
 
 -- Copy and paste from system clipboard
+vim.api.nvim_set_keymap('n', '<leader>[', ':bprev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>]', ':bnext<CR>', { noremap = true, silent = true })
+
+-- Copy and paste from system clipboard
 vim.api.nvim_set_keymap('v', '<C-y>', '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-p>', '"+p', { noremap = true, silent = true })
 
